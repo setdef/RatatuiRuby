@@ -3,6 +3,6 @@
 
 [tools]
 ruby = "4.0.7"
-rust = "1.91.1"
+rust = "1.99.0"
 python = "3.12"
 "pipx:pre-commit" = "latest"
