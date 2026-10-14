@@ -23,23 +23,28 @@ class TestDeferredWarnings < Minitest::Test
   end
 
   def test_warning_deferred_during_tui_session
-    # Warnings during TUI session should be queued, not printed immediately
-    with_test_terminal do
-      p = RatatuiRuby::Widgets::Paragraph.new(text: "test", wrap: true)
+    # Warnings during TUI session should be queued, not printed immediately.
+    # The outer capture holds the flush that happens when the session ends.
+    _, flushed = capture_io do
+      with_test_terminal do
+        p = RatatuiRuby::Widgets::Paragraph.new(text: "test", wrap: true)
 
-      # Capture stderr during the line_count call
-      _, stderr = capture_io do
-        p.line_count(10)
+        # Capture stderr during the line_count call
+        _, stderr = capture_io do
+          p.line_count(10)
+        end
+
+        # No warning should be printed during active session
+        assert_empty stderr, "Warning should NOT be printed during TUI session"
+
+        # Warning should be queued for later
+        deferred = RatatuiRuby.instance_variable_get(:@deferred_warnings)
+        assert_equal 1, deferred.size, "Exactly one warning should be queued"
+        assert_includes deferred.first, "line_count", "Queued warning should mention the feature"
       end
-
-      # No warning should be printed during active session
-      assert_empty stderr, "Warning should NOT be printed during TUI session"
-
-      # Warning should be queued for later
-      deferred = RatatuiRuby.instance_variable_get(:@deferred_warnings)
-      assert_equal 1, deferred.size, "Exactly one warning should be queued"
-      assert_includes deferred.first, "line_count", "Queued warning should mention the feature"
     end
+
+    assert_includes flushed, "line_count", "Queued warning should flush when the session ends"
   end
 
   def test_warning_flushed_to_stderr_after_session_ends
