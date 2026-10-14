@@ -22,6 +22,10 @@ begin
     add_filter "tasks/"
     add_filter "ext/"
   end
+  # minitest/autorun runs the tests in an at_exit hook registered before this one, so
+  # SimpleCov's own at_exit hook would fire first and report before any test ran.
+  # Its Minitest plugin reports from Minitest.after_run instead once this is set.
+  SimpleCov.external_at_exit = true
 rescue LoadError
   # SimpleCov not installed
 end
