@@ -13,7 +13,7 @@ This is the companion document to [Ruby Frontend Design](./ruby_frontend.md). Th
 
 | Crate | Purpose |
 |-------|---------|
-| `ratatui` | TUI framework providing widgets, layout, and rendering |
+| `ratatui` | TUI framework providing widgets, layout, and rendering. `ratatui-core` comes from a patched fork; see [The Ratatui Fork](../ratatui_fork.md). |
 | `crossterm` | Cross-platform terminal manipulation (raw mode, events, colors) |
 | `magnus` | Ruby FFI bindings for Rust (value extraction, exception handling) |
 

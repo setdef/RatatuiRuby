@@ -379,3 +379,6 @@ These documents catalog EVERY public feature, method, function, enum variant, an
 |--------------|-----------|--------|
 | TestBackend | ratatui-core/src/backend/test.rs:* | ✅ |
 | CrosstermBackend | ratatui-crossterm/src/lib.rs:* | ✅ |
+
+**Notes:**
+- **TestBackend**: Built from a patched `ratatui-core` that resets the cells following a multi-width symbol, which upstream `TestBackend` leaves stale. See [The Ratatui Fork](../../ratatui_fork.md).

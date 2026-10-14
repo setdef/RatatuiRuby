@@ -1,5 +1,5 @@
 [0m[36m┌Text Width Calculator─────────────────────────────────────────────────────────┐[0m
-[0m[36m│Sample: 你e好l世,界W                                                              [36m│[0m
+[0m[36m│Sample: 你 好 世 界                                                               [36m│[0m
 [0m[36m│                                                                              [36m│[0m
 [0m[36m│Display Width (text_width): 8 cells                                           [36m│[0m
 [0m[36m│Display Width (span.width): 8 cells                                           [36m│[0m

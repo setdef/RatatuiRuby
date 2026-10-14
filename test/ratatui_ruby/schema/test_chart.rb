@@ -224,5 +224,17 @@ module RatatuiRuby
         legend_position: position
       )
     end
+    def test_render_single_y_axis_label
+      chart = Widgets::Chart.new(
+        datasets: [Widgets::Dataset.new(name: "DS", data: [[0.0, 0.0], [10.0, 10.0]], marker: :dot)],
+        x_axis: Widgets::Axis.new(bounds: [0.0, 10.0], labels: %w[0 10]),
+        y_axis: Widgets::Axis.new(bounds: [0.0, 10.0], labels: %w[0])
+      )
+
+      with_test_terminal(30, 8) do
+        RatatuiRuby.draw { |f| f.render_widget(chart, f.area) }
+        assert_snapshots("chart_single_y_axis_label")
+      end
+    end
   end
 end

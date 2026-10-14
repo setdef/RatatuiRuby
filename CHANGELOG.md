@@ -15,8 +15,17 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+- **Building from source needs GitHub access**: Precompiled gems are unaffected. Building the source gem now downloads part of Ratatui from `github.com` as well as crates.io.
+
 ### Fixed
 
+- **Scrollbar thumb length**: A `Scrollbar` thumb now keeps the same length as it moves and stops inside the track at the end. Before, it could change length while scrolling and run past the track.
+- **Halfwidth sound marks**: The halfwidth katakana sound marks `ﾞ` and `ﾟ` now take a column of their own, as terminals display them. Before, text after them was laid out one column too far left.
+- **`Clear` past the terminal edge**: Rendering `Clear` into an area that extends past the terminal no longer crashes. It clears the part inside the terminal.
+- **`Chart` with one y-axis label**: A chart whose y-axis has a single label no longer crashes. The label isn't drawn, as with a single x-axis label.
+- **Very large `Sparkline` and `BarChart` values**: Values near `2**64` now draw bars. Before, a sparkline drew nothing and a bar chart drew only its labels.
+- **Hidden text**: The `:hidden` modifier now hides text in a real terminal. Before, the terminal showed the text anyway, though the test terminal reported it hidden.
+- **Stale characters in tests**: When a multi-width character (CJK, emoji) is drawn, the test terminal now resets the cells following it, as a real terminal does. Characters an earlier draw left there no longer appear in `get_cell_at` or rich snapshots, and no longer reappear in `buffer_content` when narrow text replaces the wide character. Rich snapshots that captured such characters change when you update them.
 - **macOS 27 load failure**: Native gems built for macOS contained a malformed Mach-O install name (empty `LC_ID_DYLIB`), which macOS 27's dynamic loader rejects. `require "ratatui_ruby"` failed with `load command #4 string extends beyond end of load command`. The extension is now built with `rb_sys` 0.9.129 or later, which sets a valid install name. The gemspec now requires `rb_sys >= 0.9.129`.
 - **Precompiled gem skipped on most Macs**: The Apple Silicon native gem carried the macOS version of the CI machine that packaged it (`arm64-darwin-24` through 1.5.0, `arm64-darwin-23` in 1.5.1). RubyGems installs such a gem only when your Ruby reports that exact version, so other Macs fell back to the source gem and needed a Rust toolchain. The gem now ships as `arm64-darwin`, which installs on every macOS version on Apple Silicon.
 

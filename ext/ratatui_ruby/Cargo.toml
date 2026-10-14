@@ -21,3 +21,9 @@ time = { version = "0.3", features = ["macros"] }
 [profile.release]
 debug = true
 strip = false
+
+# ratatui-core from setdef/ratatui: the v0.30.2 release plus two fixes Ratatui
+# hasn't released. See doc/contributors/ratatui_fork.md. Pin an exact commit;
+# never rewrite it.
+[patch.crates-io]
+ratatui-core = { git = "https://github.com/setdef/ratatui", rev = "f241348f1143213a05e86ab0cd014b4df38f5d9d" }

@@ -12,6 +12,7 @@
 - [The Design of **ratatui_ruby**](./design.md): Architecture overview
   - [Ruby Frontend Design](./design/ruby_frontend.md): Two-layer architecture, TUI facade, data-driven UI
   - [Rust Backend Design](./design/rust_backend.md): Rendering pipeline, namespace dispatch, magnus integration
+- [The Ratatui Fork](./ratatui_fork.md): Why RatatuiRuby builds against a patched Ratatui, and how to maintain it
 
 
 

@@ -74,4 +74,15 @@ class TestClear < Minitest::Test
       assert_equal "└──────────────────┘", buffer_content[4]
     end
   end
+
+  def test_render_partly_outside_terminal_clears_only_cells_inside
+    with_test_terminal(10, 1) do
+      RatatuiRuby.draw do |f|
+        f.render_widget(RatatuiRuby::Widgets::Paragraph.new(text: "abcdefghij"), f.area)
+        f.render_widget(RatatuiRuby::Widgets::Clear.new, RatatuiRuby::Layout::Rect.new(x: 8, y: 0, width: 5, height: 1))
+      end
+
+      assert_equal ["abcdefgh  "], buffer_content
+    end
+  end
 end

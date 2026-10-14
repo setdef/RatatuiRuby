@@ -127,4 +127,12 @@ class TestSparkline < Minitest::Test
       assert_snapshots("bar_set_three_levels")
     end
   end
+
+  def test_render_very_large_values
+    with_test_terminal(4, 3) do
+      spark = RatatuiRuby::Widgets::Sparkline.new(data: [(2 ** 64) - 1, 2 ** 63, 1])
+      RatatuiRuby.draw { |f| f.render_widget(spark, f.area) }
+      assert_snapshots("sparkline_very_large_values")
+    end
+  end
 end

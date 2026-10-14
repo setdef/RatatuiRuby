@@ -1,10 +1,11 @@
-// SPDX-FileCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+// SPDX-FileCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 //! Terminal query functions (read-only access to terminal state).
 
 use magnus::value::ReprValue;
 use magnus::{Error, Module, Value};
+use ratatui::buffer::CellWidth;
 
 use super::TerminalWrapper;
 
@@ -31,10 +32,10 @@ pub fn get_buffer_content() -> Result<String, Error> {
                     let cell = buffer.cell((x, y)).unwrap();
                     let symbol = cell.symbol();
                     result.push_str(symbol);
-                    // Skip continuation cells after wide characters (e.g. emoji, CJK).
-                    // Ratatui's set_stringn resets these to " ", but they don't represent
-                    // an additional display column — the preceding wide symbol covers them.
-                    let width = ratatui::text::Text::raw(symbol).width();
+                    // Skip the cells following a multi-width symbol (e.g. emoji, CJK).
+                    // Ratatui resets them, and the terminal draws the symbol across them,
+                    // so they add no display column of their own.
+                    let width = usize::from(cell.cell_width());
                     if width > 1 {
                         skip = width - 1;
                     }

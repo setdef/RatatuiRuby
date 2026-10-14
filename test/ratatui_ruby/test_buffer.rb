@@ -109,4 +109,13 @@ class TestDraw < Minitest::Test
       assert_equal "H", RatatuiRuby::Buffer[0, 0].char
     end
   end
+
+  def test_buffer_content_gives_halfwidth_sound_marks_their_own_column
+    with_test_terminal(6, 1) do
+      RatatuiRuby.draw { |f| f.render_widget(RatatuiRuby::Widgets::Paragraph.new(text: "ｶﾞｷX"), f.area) }
+
+      assert_equal ["ｶﾞｷX  "], buffer_content
+      assert_equal "ｷ", RatatuiRuby.get_cell_at(2, 0).char
+    end
+  end
 end

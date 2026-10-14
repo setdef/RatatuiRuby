@@ -101,4 +101,12 @@ class TestBarChart < Minitest::Test
       assert_snapshots("barchart_three_levels")
     end
   end
+
+  def test_render_very_large_values
+    with_test_terminal(12, 6) do
+      chart = RatatuiRuby::Widgets::BarChart.new(data: { "A" => (2 ** 64) - 1, "B" => 2 ** 63 }, bar_width: 3)
+      RatatuiRuby.draw { |f| f.render_widget(chart, f.area) }
+      assert_snapshots("barchart_very_large_values")
+    end
+  end
 end
