@@ -276,7 +276,7 @@ module RatatuiRuby
   #
   # This method handles both. Pass a tree for declarative rendering, or
   # pass a block to manipulate the frame directly. The block receives a
-  # {Frame} object for imperative drawing.
+  # Frame object for imperative drawing.
   #
   # [tree] A widget tree (Widgets::Paragraph, Layout::Layout, etc.) to render. Optional if
   #--
@@ -348,7 +348,7 @@ module RatatuiRuby
   #
   # Interactive apps must respond to input. Loops need to poll without burning CPU.
   #
-  # This method checks for an event. It returns the event if one is found. It returns {RatatuiRuby::Event::None} if the timeout expires.
+  # This method checks for an event. It returns the event if one is found. It returns RatatuiRuby::Event::None if the timeout expires.
   #
   # [timeout] Float seconds to wait (default: 0.016).
   #--
@@ -427,7 +427,7 @@ module RatatuiRuby
   # When writing tests, you need to verify that your widget drew the correct characters and styles.
   # This method provides deep inspection of the cell's state (symbol, colors, modifiers).
   #
-  # Returns a {Buffer::Cell} object.
+  # Returns a Buffer::Cell object.
   #
   # Values depend on what the backend has rendered. If nothing has been rendered to a cell, it may contain defaults (empty symbol, nil colors).
   #
@@ -462,8 +462,6 @@ module RatatuiRuby
   #
   # In inline viewports, this returns the viewport dimensions.
   # In fullscreen mode, this returns the full terminal size.
-  #
-  # @return [Layout::Rect] The rendering viewport area
   def self.get_viewport_area
     raw = _get_terminal_area
     Layout::Rect.new(
@@ -492,7 +490,6 @@ module RatatuiRuby
   #--
   # SPDX-SnippetEnd
   #++
-  # @return [Layout::Rect] The full terminal size
   def self.get_terminal_size
     raw = _get_terminal_size
     Layout::Rect.new(

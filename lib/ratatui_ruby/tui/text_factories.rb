@@ -13,31 +13,26 @@ module RatatuiRuby
     # without fully qualifying the class names.
     module TextFactories
       # Creates a Text::Span.
-      # @return [Text::Span]
       def text_span(...)
         Text::Span.new(...)
       end
 
       # Creates a Text::Span (alias).
-      # @return [Text::Span]
       def span(...)
         Text::Span.new(...)
       end
 
       # Creates a Text::Line.
-      # @return [Text::Line]
       def text_line(...)
         Text::Line.new(...)
       end
 
       # Creates a Text::Line (alias).
-      # @return [Text::Line]
       def line(...)
         Text::Line.new(...)
       end
 
       # Calculates the display width of a string.
-      # @return [Integer]
       def text_width(string)
         Text.width(string)
       end
@@ -71,8 +66,7 @@ module RatatuiRuby
       # SPDX-SnippetEnd
       #++
       #
-      # @param type [Symbol] Text type: :span, :line
-      # @return [Text::Span, Text::Line]
+      # [type] Symbol: <tt>:span</tt> or <tt>:line</tt>.
       def text(type, **)
         case type
         when :span then text_span(**)

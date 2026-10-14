@@ -56,10 +56,11 @@ module RatatuiRuby
       module ClassMethods
         # Coerces a bare Hash argument into keyword arguments.
         #
-        # @param first [Hash, nil] First positional argument (bare hash case)
-        # @param kwargs [Hash] Keyword arguments (normal splatted case)
-        # @return [Object] New instance of the widget class
-        # @raise [ArgumentError] In debug mode, if unknown keys are present
+        # Returns a new instance of the widget class. In debug mode, raises ArgumentError if the
+        # Hash has keys the widget doesn't know.
+        #
+        # [first] Hash (nullable): a bare Hash passed as the first positional argument.
+        # [kwargs] Hash of keyword arguments, used when no bare Hash was passed.
         def coerce_args(first, kwargs)
           if first.is_a?(Hash) && kwargs.empty?
             unknown = first.keys - self::KNOWN_KEYS

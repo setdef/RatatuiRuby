@@ -11,7 +11,7 @@ module RatatuiRuby
     #
     # Words form sentences. Spans form lines.
     #
-    # This class composes multiple {Span} objects into a single horizontal row of text.
+    # This class composes multiple Span objects into a single horizontal row of text.
     # It handles the layout of rich text fragments within the flow of a paragraph.
     #
     # Use it to build multi-colored headers, status messages, or log entries.

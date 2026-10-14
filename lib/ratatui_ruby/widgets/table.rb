@@ -179,29 +179,21 @@ module RatatuiRuby
       end
 
       # Returns true if a row is selected.
-      #
-      # @return [Boolean]
       def row_selected?
         !selected_row.nil?
       end
 
       # Returns true if a column is selected.
-      #
-      # @return [Boolean]
       def column_selected?
         !selected_column.nil?
       end
 
       # Returns true if both a row and column are selected (a cell is selected).
-      #
-      # @return [Boolean]
       def cell_selected?
         row_selected? && column_selected?
       end
 
       # Returns true if the table has no rows.
-      #
-      # @return [Boolean]
       def empty?
         rows.empty?
       end

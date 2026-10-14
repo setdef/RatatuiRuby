@@ -31,7 +31,7 @@ module RatatuiRuby
       #
       # Creates a new RatatuiMascot.
       #
-      # @param block [Block, nil] A block to wrap the widget in.
+      # [block] Block (nullable) to wrap the widget in.
       def initialize(block: nil)
         super
       end

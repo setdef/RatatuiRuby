@@ -19,7 +19,7 @@ module RatatuiRuby
           @kind == :standard
         end
 
-        # Alias for {#standard?}.
+        # Alias for #standard?.
         #
         # Provided for semantic clarity when checking if a key has no special category.
         #

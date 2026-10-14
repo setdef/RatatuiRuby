@@ -113,7 +113,7 @@ module RatatuiRuby
         new
       end
 
-      # Creates a new Style (convenience alias for {#initialize}).
+      # Creates a new Style (convenience alias for #initialize).
       #
       # Constructor keyword arguments require typing out the full <tt>Style.new</tt> form.
       # This gets verbose in tight layout code or one-liners.
@@ -137,8 +137,6 @@ module RatatuiRuby
       #--
       # SPDX-SnippetEnd
       #++
-      #
-      # @return [Style]
       def self.with(fg: nil, bg: nil, underline_color: nil, modifiers: [], remove_modifiers: [])
         new(fg:, bg:, underline_color:, modifiers:, remove_modifiers:)
       end

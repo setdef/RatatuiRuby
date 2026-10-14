@@ -9,14 +9,14 @@ module RatatuiRuby
   # Layout primitives for geometry and space distribution.
   #
   # This module mirrors +ratatui::layout+ and contains:
-  # - {Rect} — Rectangle geometry
-  # - {Position} — Terminal coordinates
-  # - {Size} — Terminal dimensions
-  # - {Constraint} — Sizing rules
-  # - {Layout} — Space distribution
-  # - {HorizontalAlignment} — Horizontal alignment constants
-  # - {VerticalAlignment} — Vertical alignment constants
-  # - {Alignment} — Alias for HorizontalAlignment
+  # - Rect — Rectangle geometry
+  # - Position — Terminal coordinates
+  # - Size — Terminal dimensions
+  # - Constraint — Sizing rules
+  # - Layout — Space distribution
+  # - HorizontalAlignment — Horizontal alignment constants
+  # - VerticalAlignment — Vertical alignment constants
+  # - Alignment — Alias for HorizontalAlignment
   module Layout
   end
 end

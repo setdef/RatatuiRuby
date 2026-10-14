@@ -13,8 +13,9 @@ module RatatuiRuby
     # and write the tree to XML when flush_a11y_capture is called.
     module A11yCapture
       # Intercepts render_widget to capture widgets for A11Y export.
-      # @param widget [widget] The widget being rendered
-      # @param area [Layout::Rect] The area to render into
+      #
+      # [widget] Widget being rendered.
+      # [area] Layout::Rect to render it into.
       def render_widget(widget, area)
         if Labs.enabled?(:a11y)
           widgets = (@a11y_widgets ||= []) #: Array[[(_CustomWidget | widget), Layout::Rect]]
@@ -24,9 +25,10 @@ module RatatuiRuby
       end
 
       # Intercepts render_stateful_widget to capture widgets for A11Y export.
-      # @param widget [widget] The widget being rendered
-      # @param area [Layout::Rect] The area to render into
-      # @param state [Object] The widget state
+      #
+      # [widget] Widget being rendered.
+      # [area] Layout::Rect to render it into.
+      # [state] State object for the widget.
       def render_stateful_widget(widget, area, state)
         if Labs.enabled?(:a11y)
           widgets = (@a11y_widgets ||= []) #: Array[[(_CustomWidget | widget), Layout::Rect]]

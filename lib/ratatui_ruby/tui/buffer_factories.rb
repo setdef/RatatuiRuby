@@ -13,7 +13,6 @@ module RatatuiRuby
     # and buffer inspection purposes.
     module BufferFactories
       # Creates a Buffer::Cell (for testing).
-      # @return [Buffer::Cell]
       def cell(...)
         Buffer::Cell.new(...)
       end

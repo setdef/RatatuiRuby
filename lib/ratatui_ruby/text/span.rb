@@ -13,7 +13,7 @@ module RatatuiRuby
     #
     # This class attaches style to content. It pairs a string with visual attributes.
     #
-    # combine spans into a {Line} to create rich text.
+    # combine spans into a Line to create rich text.
     #
     # === Examples
     #

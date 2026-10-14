@@ -13,7 +13,6 @@ module RatatuiRuby
     # and Layout::Layout without fully qualifying the class names.
     module LayoutFactories
       # Creates a Layout::Rect.
-      # @return [Layout::Rect]
       def rect(...)
         Layout::Rect.new(...)
       end
@@ -40,7 +39,6 @@ module RatatuiRuby
       #--
       # SPDX-SnippetEnd
       #++
-      # @return [Layout::Constraint]
       def constraint(type_or_arg = nil, arg1 = nil, arg2 = nil, **)
         # Type-based dispatch when first arg is a symbol
         if type_or_arg.is_a?(Symbol)
@@ -72,79 +70,68 @@ module RatatuiRuby
       end
 
       # Creates a Layout::Constraint.length.
-      # @return [Layout::Constraint]
       def constraint_length(n)
         Layout::Constraint.length(n)
       end
 
       # Creates a Layout::Constraint.percentage.
-      # @return [Layout::Constraint]
       def constraint_percentage(n)
         Layout::Constraint.percentage(n)
       end
 
       # Creates a Layout::Constraint.min.
-      # @return [Layout::Constraint]
       def constraint_min(n)
         Layout::Constraint.min(n)
       end
 
       # Creates a Layout::Constraint.max.
-      # @return [Layout::Constraint]
       def constraint_max(n)
         Layout::Constraint.max(n)
       end
 
       # Creates a Layout::Constraint.fill.
-      # @return [Layout::Constraint]
       def constraint_fill(n = 1)
         Layout::Constraint.fill(n)
       end
 
       # Creates a Layout::Constraint.ratio.
-      # @return [Layout::Constraint]
       def constraint_ratio(numerator, denominator)
         Layout::Constraint.ratio(numerator, denominator)
       end
 
       # Creates a Layout::Layout.
-      # @return [Layout::Layout]
       def layout(...)
         Layout::Layout.new(...)
       end
 
       # Splits an area using Layout::Layout.split.
-      # @return [Array<Layout::Rect>]
+      # Returns an Array of Layout::Rect.
       def layout_split(area, direction: :vertical, constraints:, flex: :legacy)
         Layout::Layout.split(area, direction:, constraints:, flex:)
       end
 
-      # Alias for {#layout_split} — shorter, more ergonomic.
-      # @return [Array<Layout::Rect>]
+      # Alias for #layout_split — shorter, more ergonomic.
+      # Returns an Array of Layout::Rect.
       def split(area, direction: :vertical, constraints:, flex: :legacy)
         layout_split(area, direction:, constraints:, flex:)
       end
 
-      # Alias for {#constraint_length} — CSS-inspired "fixed" sizing.
-      # @return [Layout::Constraint]
+      # Alias for #constraint_length — CSS-inspired "fixed" sizing.
       def fixed(n)
         constraint_length(n)
       end
 
-      # Alias for {#constraint_percentage} — CSS-inspired percent sizing.
-      # @return [Layout::Constraint]
+      # Alias for #constraint_percentage — CSS-inspired percent sizing.
       def percent(n)
         constraint_percentage(n)
       end
 
-      # Alias for {#constraint_fill} — CSS Flexbox-inspired flexible sizing.
-      # @return [Layout::Constraint]
+      # Alias for #constraint_fill — CSS Flexbox-inspired flexible sizing.
       def flex(n = 1)
         constraint_fill(n)
       end
 
-      # Alias for {#constraint_fill} — CSS Grid-inspired "fr" (fraction) unit.
-      # @return [Layout::Constraint]
+      # Alias for #constraint_fill — CSS Grid-inspired "fr" (fraction) unit.
       def fr(n = 1)
         constraint_fill(n)
       end

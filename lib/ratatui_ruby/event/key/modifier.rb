@@ -15,7 +15,7 @@ module RatatuiRuby
           @modifiers.include?("ctrl") || @code == "left_control" || @code == "right_control"
         end
 
-        # Alias for {#ctrl?}.
+        # Alias for #ctrl?.
         alias control? ctrl?
 
         # Returns true if ALT is held OR if this is a left_alt/right_alt key event.
@@ -23,7 +23,7 @@ module RatatuiRuby
           @modifiers.include?("alt") || @code == "left_alt" || @code == "right_alt"
         end
 
-        # Alias for {#alt?}.
+        # Alias for #alt?.
         alias option? alt?
 
         # Returns true if SHIFT is held OR if this is a left_shift/right_shift key event.
@@ -37,15 +37,15 @@ module RatatuiRuby
           @modifiers.include?("super") || @code == "left_super" || @code == "right_super"
         end
 
-        # Alias for {#super?}.
+        # Alias for #super?.
         alias win? super?
-        # Alias for {#super?}.
+        # Alias for #super?.
         alias windows? super?
-        # Alias for {#super?}.
+        # Alias for #super?.
         alias command? super?
-        # Alias for {#super?}.
+        # Alias for #super?.
         alias cmd? super?
-        # Alias for {#super?}.
+        # Alias for #super?.
         alias tux? super?
 
         # Returns true if HYPER is held OR if this is a left_hyper/right_hyper key event.

@@ -196,7 +196,7 @@ module RatatuiRuby
       # :attr_reader: shapes
       # Array of shapes to render.
       #
-      # Includes {Shape::Line}, {Shape::Circle}, {Shape::Map}, etc.
+      # Includes Shape::Line, Shape::Circle, Shape::Map, etc.
 
       ##
       # :attr_reader: x_bounds

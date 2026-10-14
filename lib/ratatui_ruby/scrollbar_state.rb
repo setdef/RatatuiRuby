@@ -8,7 +8,7 @@
 module RatatuiRuby
   # Mutable state object for Scrollbar widgets.
   #
-  # When using {Frame#render_stateful_widget}, the State object is the
+  # When using Frame#render_stateful_widget, the State object is the
   # *single source of truth* for position and content length. Widget
   # properties (+position+, +content_length+) are *ignored* in stateful mode.
   #

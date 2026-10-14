@@ -14,19 +14,16 @@ module RatatuiRuby
     # qualifying the class names.
     module StateFactories
       # Creates a ListState.
-      # @return [ListState]
       def list_state(...)
         ListState.new(...)
       end
 
       # Creates a TableState.
-      # @return [TableState]
       def table_state(...)
         TableState.new(...)
       end
 
       # Creates a ScrollbarState.
-      # @return [ScrollbarState]
       def scrollbar_state(...)
         ScrollbarState.new(...)
       end
@@ -61,8 +58,7 @@ module RatatuiRuby
       # SPDX-SnippetEnd
       #++
       #
-      # @param type [Symbol] State type: :list, :table, :scrollbar
-      # @return [ListState, TableState, ScrollbarState]
+      # [type] Symbol: <tt>:list</tt>, <tt>:table</tt>, or <tt>:scrollbar</tt>.
       def state(type, arg = nil)
         case type
         when :list then list_state(arg)

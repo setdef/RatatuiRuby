@@ -13,9 +13,7 @@ module RatatuiRuby
   # state for TUI applications. It handles raw mode, alternate screen, and ensures
   # proper cleanup on exit.
   #
-  # @see init_terminal
-  # @see restore_terminal
-  # @see run
+  # See also #init_terminal, #restore_terminal, and #run.
   module TerminalLifecycle
     ##
     # Whether a TUI session is currently active.
@@ -49,14 +47,14 @@ module RatatuiRuby
     # Initializes the terminal for TUI mode.
     # Enters alternate screen and enables raw mode.
     #
-    # In headless mode ({headless!}), this method raises {Error::Invariant}.
+    # In headless mode (OutputGuard#headless!), this method raises Error::Invariant.
     # Use headless mode for batch/CLI apps.
     #
     # [focus_events] whether to enable focus gain/loss events (default: true).
     # [bracketed_paste] whether to enable bracketed paste mode (default: true).
     #
-    # @raise [Error::Invariant] if headless mode is enabled or a session is already active
-    # @see headless!
+    # Raises Error::Invariant if headless mode is enabled or a session is already active.
+    # See also OutputGuard#headless!.
     def init_terminal(focus_events: true, bracketed_paste: true, viewport: nil, height: nil)
       if @headless_mode
         raise Error::Invariant, "Cannot initialize terminal: headless mode is enabled"
@@ -84,7 +82,7 @@ module RatatuiRuby
     # [width] Integer width of the test terminal.
     # [height] Integer height of the test terminal.
     #
-    # @raise [Error::Invariant] if headless mode is enabled or a session is already active
+    # Raises Error::Invariant if headless mode is enabled or a session is already active.
     def init_test_terminal(width, height, viewport_type = "fullscreen", viewport_height = nil)
       if @headless_mode
         raise Error::Invariant, "Cannot initialize terminal: headless mode is enabled"
@@ -101,10 +99,10 @@ module RatatuiRuby
     # Leaves alternate screen and disables raw mode.
     # Also flushes any deferred warnings and panic info that were queued during the session.
     #
-    # In headless mode ({headless!}), this method is a silent no-op since
+    # In headless mode (OutputGuard#headless!), this method is a silent no-op since
     # no terminal was ever initialized.
     #
-    # @see headless!
+    # See also OutputGuard#headless!.
     def restore_terminal
       return if @headless_mode
 
@@ -121,10 +119,10 @@ module RatatuiRuby
     # Managing generic setup/teardown (raw mode, alternate screen) manually is error-prone.
     # If your app crashes, the terminal might be left in a broken state.
     #
-    # This method handles the safety net. It initializes the terminal, yields a {TUI},
+    # This method handles the safety net. It initializes the terminal, yields a TUI,
     # and ensures the terminal state is restored even if exceptions occur.
     #
-    # In headless mode ({headless!}), this method raises {Error::Invariant} immediately
+    # In headless mode (OutputGuard#headless!), this method raises Error::Invariant immediately
     # and the block is never executed. Use headless mode for batch/CLI apps.
     #
     # === Example
@@ -142,8 +140,8 @@ module RatatuiRuby
     #--
     # SPDX-SnippetEnd
     #++
-    # @raise [Error::Invariant] if headless mode is enabled
-    # @see headless!
+    # Raises Error::Invariant if headless mode is enabled.
+    # See also OutputGuard#headless!.
     def run(focus_events: true, bracketed_paste: true, viewport: nil, height: nil)
       init_terminal(focus_events:, bracketed_paste:, viewport:, height:)
       yield TUI.new
@@ -223,7 +221,7 @@ module RatatuiRuby
     # SPDX-SnippetEnd
     #++
     #
-    # @raise [Error::Invariant] if the current viewport is not inline
+    # Raises Error::Invariant if the current viewport is not inline.
     def insert_before(height, widget = nil, &block)
       # Validate we're in an inline viewport
       viewport_type = RatatuiRuby._get_viewport_type

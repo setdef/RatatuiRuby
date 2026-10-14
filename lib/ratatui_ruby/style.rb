@@ -9,8 +9,8 @@ module RatatuiRuby
   # Styling primitives for colors and text effects.
   #
   # This module mirrors +ratatui::style+ and contains:
-  # - {Style} — Colors and modifiers
-  # - {Color} — Color constructors
+  # - Style — Colors and modifiers
+  # - Color — Color constructors
   module Style
   end
 end

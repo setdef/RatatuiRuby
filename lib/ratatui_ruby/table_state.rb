@@ -8,7 +8,7 @@
 module RatatuiRuby
   # Mutable state object for Table widgets.
   #
-  # When using {Frame#render_stateful_widget}, the State object is the
+  # When using Frame#render_stateful_widget, the State object is the
   # *single source of truth* for selection and scroll offset. Widget
   # properties (+selected_row+, +selected_column+, +offset+) are *ignored*
   # in stateful mode.

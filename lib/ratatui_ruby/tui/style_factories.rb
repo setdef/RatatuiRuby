@@ -13,7 +13,6 @@ module RatatuiRuby
     # qualifying the class name.
     module StyleFactories
       # Creates a Style::Style.
-      # @return [Style::Style]
       def style(...)
         Style::Style.new(...)
       end
