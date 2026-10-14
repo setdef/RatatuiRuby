@@ -16,7 +16,7 @@ This example exists as a documentation regression test. It ensures the layout an
   SPDX-FileCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
-<!-- SYNC:START:app.rb:main -->
+<!-- SYNC:START:./app.rb:main -->
 ```ruby
 loop do
   tui.draw do |frame|
@@ -35,7 +35,7 @@ loop do
       tui.paragraph(
         text: "Hello, Ratatui!",
         alignment: :center,
-        block: tui.block(title: "Content", borders: [:all], border_color: "cyan")
+        block: tui.block(title: "Content", borders: [:all], border_style: { fg: "cyan" })
       ),
       top
     )

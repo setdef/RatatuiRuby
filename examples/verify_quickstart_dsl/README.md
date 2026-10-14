@@ -16,7 +16,7 @@ This example exists as a documentation regression test. It ensures the recommend
   SPDX-FileCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
-<!-- SYNC:START:app.rb:main -->
+<!-- SYNC:START:./app.rb:main -->
 ```ruby
 # 1. Initialize the terminal, start the run loop, and ensure the terminal is restored.
 RatatuiRuby.run do |tui|
@@ -29,7 +29,7 @@ RatatuiRuby.run do |tui|
         title: "My Ruby TUI App",
         title_alignment: :center,
         borders: [:all],
-        border_color: "cyan",
+        border_style: { fg: "cyan" },
         style: { fg: "white" }
       )
     )

@@ -16,7 +16,7 @@ This example exists as a documentation regression test. It ensures that the very
   SPDX-FileCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
-<!-- SYNC:START:app.rb:main -->
+<!-- SYNC:START:./app.rb:main -->
 ```ruby
 RatatuiRuby.run do |tui|
   loop do
@@ -28,7 +28,7 @@ RatatuiRuby.run do |tui|
           block: tui.block(
             title: "My Ruby TUI App",
             borders: [:all],
-            border_color: "cyan"
+            border_style: { fg: "cyan" }
           )
         ),
         frame.area

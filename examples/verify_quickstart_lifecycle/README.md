@@ -16,7 +16,7 @@ This example exists as a documentation regression test. It ensures the core life
   SPDX-FileCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
-<!-- SYNC:START:app.rb:main -->
+<!-- SYNC:START:./app.rb:main -->
 ```ruby
 # 1. Initialize the terminal
 RatatuiRuby.init_terminal
@@ -33,7 +33,7 @@ begin
         title: "My Ruby TUI App",
         title_alignment: :center,
         borders: [:all],
-        border_color: "cyan",
+        border_style: { fg: "cyan" },
         style: { fg: "white" }
       )
     )
