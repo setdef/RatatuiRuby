@@ -22,7 +22,7 @@ module RatatuiRuby
   #     def render(area)
   #       [
   #         RatatuiRuby::Draw.string(area.x, area.y, "Hello", {fg: :red}),
-  #         RatatuiRuby::Draw.cell(area.x + 6, area.y, RatatuiRuby::Cell.char("!"))
+  #         RatatuiRuby::Draw.cell(area.x + 6, area.y, RatatuiRuby::Buffer::Cell.char("!"))
   #       ]
   #     end
   #   end

@@ -33,8 +33,6 @@ module RatatuiRuby
     #++
     class Cell
       # The character displayed in the cell.
-      #
-      # Named to match Ratatui's Cell::symbol() method.
       attr_reader :symbol
 
       # Alias for Rubyists who prefer a shorter name.
