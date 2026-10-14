@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+// SPDX-FileCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 //! Private terminal storage with safe accessor functions.
@@ -93,9 +93,6 @@ pub fn is_initialized() -> bool {
 
 #[cfg(test)]
 mod tests {
-    use crate::terminal::query::DrawSnapshot;
-    use ratatui::layout::Rect;
-
     #[test]
     fn test_is_in_draw_mode_false_by_default() {
         assert!(!super::is_in_draw_mode());
