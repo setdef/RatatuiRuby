@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 [tools]
-ruby = "4.0.0"
+ruby = "4.0.7"
 rust = "1.91.1"
 python = "3.12"
 "pipx:pre-commit" = "latest"
