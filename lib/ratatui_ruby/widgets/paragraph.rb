@@ -73,6 +73,8 @@ module RatatuiRuby
       #
       # [text] String or Text::Line array.
       # [style] Style object.
+      # [fg] Foreground color, a shorthand for <tt>style: Style.new(fg:)</tt>. Ignored when +style+ is given.
+      # [bg] Background color, a shorthand for <tt>style: Style.new(bg:)</tt>. Ignored when +style+ is given.
       # [block] Block object.
       # [wrap] Boolean (default: false).
       # [alignment] Symbol (default: <tt>:left</tt>).
@@ -88,8 +90,7 @@ module RatatuiRuby
         )
       end
 
-      # Legacy constructor support.
-      def self.new(text:, style: nil, fg: nil, bg: nil, block: nil, wrap: false, alignment: :left, scroll: [0, 0])
+      def self.new(text:, style: nil, fg: nil, bg: nil, block: nil, wrap: false, alignment: :left, scroll: [0, 0]) # :nodoc:
         style ||= RatatuiRuby::Style::Style.new(fg:, bg:)
         coerced_scroll = [Integer(scroll[0]), Integer(scroll[1])]
         super(text:, style:, block:, wrap:, alignment:, scroll: coerced_scroll)

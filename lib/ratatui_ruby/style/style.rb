@@ -113,7 +113,7 @@ module RatatuiRuby
         new
       end
 
-      # Creates a new Style (convenience alias for #initialize).
+      # Creates a new Style (convenience alias for ::new).
       #
       # Constructor keyword arguments require typing out the full <tt>Style.new</tt> form.
       # This gets verbose in tight layout code or one-liners.
