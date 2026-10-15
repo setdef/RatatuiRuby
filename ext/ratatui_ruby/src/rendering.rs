@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+// SPDX-FileCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 use crate::style::{parse_color_value, parse_modifier_str, parse_style};
@@ -114,6 +114,7 @@ fn process_draw_command(buffer: &mut Buffer, cmd: Value) -> Result<(), Error> {
             let symbol: String = cell_val.funcall("char", ())?;
             let fg_val: Value = cell_val.funcall("fg", ())?;
             let bg_val: Value = cell_val.funcall("bg", ())?;
+            let underline_color_val: Value = cell_val.funcall("underline_color", ())?;
             let modifiers_val: Value = cell_val.funcall("modifiers", ())?;
 
             let mut style = Style::default();
@@ -126,6 +127,11 @@ fn process_draw_command(buffer: &mut Buffer, cmd: Value) -> Result<(), Error> {
             if !bg_val.is_nil() {
                 if let Some(color) = parse_color_value(bg_val)? {
                     style = style.bg(color);
+                }
+            }
+            if !underline_color_val.is_nil() {
+                if let Some(color) = parse_color_value(underline_color_val)? {
+                    style = style.underline_color(color);
                 }
             }
 

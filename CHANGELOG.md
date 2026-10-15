@@ -19,6 +19,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Fixed
 
+- **Underline color in custom widgets**: A cell drawn with `Draw.cell` now keeps its `underline_color`. Before, the underline used the text color.
 - **Scrollbar thumb length**: A `Scrollbar` thumb now keeps the same length as it moves and stops inside the track at the end. Before, it could change length while scrolling and run past the track.
 - **Halfwidth sound marks**: The halfwidth katakana sound marks `ﾞ` and `ﾟ` now take a column of their own, as terminals display them. Before, text after them was laid out one column too far left.
 - **`Clear` past the terminal edge**: Rendering `Clear` into an area that extends past the terminal no longer crashes. It clears the part inside the terminal.

@@ -35,6 +35,17 @@ class TestDraw < Minitest::Test
     end
   end
 
+  def test_draw_cell_underline_color
+    cell = RatatuiRuby::Buffer::Cell.new(char: "X", underline_color: :yellow, modifiers: ["underlined"])
+    widget = CustomWidget.new(cell)
+
+    with_test_terminal(10, 5) do
+      RatatuiRuby.draw { |f| f.render_widget(widget, f.area) }
+
+      assert_equal :yellow, RatatuiRuby.get_cell_at(0, 0).underline_color
+    end
+  end
+
   class OverwritingWidget
     def render(area)
       [
