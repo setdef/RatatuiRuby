@@ -413,6 +413,21 @@ This modular structure keeps each file focused (~20-50 lines) and makes it easy 
 
 ---
 
+## Private Method Names
+
+Most private methods live in namespaces RatatuiRuby owns: its own classes and singletons, and the modules it mixes into them. Give those plain names, like `resolve_viewport` or `queue_warning`.
+
+The `TestHelper` mixins are different. Apps include them into their own test classes, so every method and instance variable they define lands in a namespace the app owns. A private helper named `render_buffer` could collide with one of the app's helpers, and it would read like something the app is meant to call.
+
+So the test helper mixins split their private methods in two:
+
+- **Hook methods and Test Utility Methods** keep plain names, even when private. `normalize_snapshots` is a hook method, the step of a Template Method that a test class overrides to normalize every snapshot it takes. `popen_with_timeout` is a Test Utility Method that tests call directly.
+- **Implementation details** start with an underscore, like `_render_buffer_with_ansi` and `_ansi_for_color`. Instance variables also carry the gem's name, like `@_ratatui_test_terminal_active`.
+
+Use the underscore only for implementation details in a mixin that apps include into their own classes.
+
+---
+
 ## Thread and Ractor Safety
 
 ### Shareable (Frozen Data Objects)
