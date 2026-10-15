@@ -136,8 +136,16 @@ namespace :lint do
     sh "bundle exec rake rdoc:coverage"
   end
 
+  desc "Check that every locked gem installs on the oldest supported Ruby"
+  task :lockfile_ruby do
+    require_relative "lint/gem_lockfile"
+    require_relative "lint/supported_rubies"
+
+    GemLockfile.current.verify(SupportedRubies.of("ratatui_ruby.gemspec").oldest)
+  end
+
   task docs: %w[autodoc rubycritic safe_rdoc_coverage reuse:lint]
-  task code: %w[rubocop rubycritic cargo:fmt cargo:clippy cargo:test]
+  task code: %w[rubocop rubycritic lockfile_ruby cargo:fmt cargo:clippy cargo:test]
   task licenses: %w[reuse:lint]
   task all: %w[docs code licenses]
 
