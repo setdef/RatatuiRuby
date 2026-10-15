@@ -62,7 +62,7 @@ GEM
       zeitwerk (~> 2.6)
     erb (6.0.7)
     erubi (1.13.1)
-    faker (3.5.3)
+    faker (3.8.0)
       i18n (>= 1.8.11, < 2)
     ffi (1.17.4-arm64-darwin)
     ffi (1.17.4-x64-mingw-ucrt)
@@ -254,7 +254,7 @@ PLATFORMS
 DEPENDENCIES
   chroma
   debug (>= 1.0)
-  faker (~> 3.5.3)
+  faker (~> 3.8.0)
   fiddle
   flog (= 4.8.0)
   inch (~> 0.4)
@@ -295,7 +295,7 @@ CHECKSUMS
   dry-types (1.9.1) sha256=baebeecdb9f8395d6c9d227b62011279440943e3ef2468fe8ccc1ba11467f178
   erb (6.0.7) sha256=c5ca6dc25b0ef974a44dc8f59fe847577122483b1968a38dec305c60bf91ee92
   erubi (1.13.1) sha256=a082103b0885dbc5ecf1172fede897f9ebdb745a4b97a5e8dc63953db1ee4ad9
-  faker (3.5.3) sha256=b961482dc0bb15ccb9a98ea7878b925669e9ae8f5e59b607da540b768137d765
+  faker (3.8.0) sha256=c147b308df73a90f27a4fc84f18d4c22ef0ad9c2a64b2b61c86fd0ca71753efc
   ffi (1.17.4-arm64-darwin) sha256=19071aaf1419251b0a46852abf960e77330a3b334d13a4ab51d58b31a937001b
   ffi (1.17.4-x64-mingw-ucrt) sha256=f6ff9618cfccc494138bddade27aa06c74c6c7bc367a1ea1103d80c2fcb9ed35
   ffi (1.17.4-x86_64-linux-gnu) sha256=9d3db14c2eae074b382fa9c083fe95aec6e0a1451da249eab096c34002bc752d
