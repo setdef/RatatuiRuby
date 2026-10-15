@@ -82,7 +82,7 @@ class TestClear < Minitest::Test
         f.render_widget(RatatuiRuby::Widgets::Clear.new, RatatuiRuby::Layout::Rect.new(x: 8, y: 0, width: 5, height: 1))
       end
 
-      assert_equal ["abcdefgh  "], buffer_content
+      assert_snapshots("clear_partly_outside_terminal")
     end
   end
 end
