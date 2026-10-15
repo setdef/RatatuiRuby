@@ -22,7 +22,7 @@ end
 class CapturingToHtml < RDoc::Markup::ToHtml
   attr_reader :captured_headings
 
-  def initialize(options, markup = nil)
+  def initialize(**)
     super
     @captured_headings = []
   end
@@ -35,6 +35,29 @@ class CapturingToHtml < RDoc::Markup::ToHtml
       @captured_headings << { level: heading.level, text: heading.text, id: $1 }
     end
   end
+end
+
+# RDoc 8 renders the main page only as index.html, but still turns Markdown
+# links to README.md into README_md.html. Redirect that page so those links,
+# and links to it from before RDoc 8, keep working.
+task :redirect_main_page do
+  rdoc_dir = ENV["RDOC_OUTPUT"] || "tmp/rdoc"
+  main_page = File.join(rdoc_dir, "#{RDocConfig::MAIN.tr('.', '_')}.html")
+  next if File.exist?(main_page) || !File.exist?(File.join(rdoc_dir, "index.html"))
+
+  File.write(main_page, <<~HTML)
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>#{RDocConfig::MAIN}</title>
+      <link rel="canonical" href="index.html">
+      <meta http-equiv="refresh" content="0; url=index.html">
+      <script>location.replace("index.html" + location.hash);</script>
+    </head>
+    <body><a href="index.html">#{RDocConfig::MAIN}</a></body>
+    </html>
+  HTML
 end
 
 task :copy_doc_images do
@@ -322,8 +345,7 @@ task :copy_examples do
         doc = RDoc::Markdown.parse(content)
 
         # Render and capture headings
-        options = RDoc::Options.new
-        renderer = CapturingToHtml.new(options)
+        renderer = CapturingToHtml.new
         file_content_html = doc.accept(renderer)
         toc_items = renderer.captured_headings
 
@@ -367,8 +389,7 @@ task :copy_examples do
 
         # Parse and render
         doc = RDoc::Markup.parse(combined_doc)
-        options = RDoc::Options.new
-        renderer = CapturingToHtml.new(options)
+        renderer = CapturingToHtml.new
         file_content_html = doc.accept(renderer)
         toc_items = renderer.captured_headings
 
@@ -614,12 +635,14 @@ Rake::Task[:rdoc].enhance do
   Rake::Task[:copy_doc_images].invoke
   Rake::Task[:copy_examples].invoke
   Rake::Task[:rewrite_examples_link].invoke
+  Rake::Task[:redirect_main_page].invoke
 end
 
 Rake::Task[:rerdoc].enhance do
   Rake::Task[:copy_doc_images].invoke
   Rake::Task[:copy_examples].invoke
   Rake::Task[:rewrite_examples_link].invoke
+  Rake::Task[:redirect_main_page].invoke
 end
 
 task :rewrite_examples_link do

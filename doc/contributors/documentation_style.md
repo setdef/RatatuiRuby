@@ -106,7 +106,6 @@ Every public class must begin with a **Context-Problem-Solution** narrative.
 
 ## 4. RDoc Specifics
 
-*   **No Endless Methods:** Do **not** use Ruby 3.0+ endless method definitions (`def foo = bar`). RDoc currently has a bug where it fails to correctly parse the end of the method, causing subsequent methods to be nested incorrectly in the documentation tree. Always use standard `def ... end` blocks.
 *   **No YARD:** Do not use `@param`, `@return`, or other YARD tags. Use standard RDoc formats.
 *   **Directives:** Use `:nodoc:` for private or internal methods that should not appear in the API docs.
 *   **Headings:** Use `===` for section headers like `=== Examples`.
