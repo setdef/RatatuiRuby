@@ -29,6 +29,9 @@ namespace :test do
   # Create a specific Minitest task for Ruby tests
   Minitest::TestTask.create(:ruby) do |t|
     t.test_globs = ["test/**/*.rb", "examples/**/test_*.rb"]
+    # Load test_helper before any test file, so SimpleCov starts before a test file
+    # requires the library. test_helper requires minitest/autorun itself.
+    t.framework = %(require "test_helper")
   end
 
   # Regenerate predicate tests before running Ruby tests
