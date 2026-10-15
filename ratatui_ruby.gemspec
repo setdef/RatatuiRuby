@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.description = File.read(File.expand_path("README.rdoc", __dir__))
   spec.homepage = "https://www.ratatui-ruby.dev"
   spec.license = "LGPL-3.0-or-later"
-  spec.required_ruby_version = [">= 3.2.9", "< 5"]
+  spec.required_ruby_version = [">= 3.3.10", "< 5"]
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 

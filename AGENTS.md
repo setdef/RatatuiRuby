@@ -13,7 +13,7 @@ Description: A high-performance Ruby wrapper for the Ratatui TUI library.
 
 Architecture:
 
-- **Frontend (Ruby):** Pure `Data` objects (Ruby 3.2+) used in Frames and/or defining the View Tree. Immediate mode.
+- **Frontend (Ruby):** Pure `Data` objects (Ruby 3.3+) used in Frames and/or defining the View Tree. Immediate mode.
 - **Backend (Rust):** A generic renderer using `ratatui` and `magnus` that traverses the Ruby `Data` tree and renders to the terminal buffer.
 
 ## Stability & Compatibility

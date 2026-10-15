@@ -22,6 +22,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+- **Ruby 3.2**: Ruby 3.2 reached end of life on 2026-03-31, so ratatui_ruby now needs Ruby 3.3.10 or later. On Ruby 3.2, keep using ratatui_ruby 1.5.
+
 ## [1.5.0] - 2026-04-19
 
 ### Added

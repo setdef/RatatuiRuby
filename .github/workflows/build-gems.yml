@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby: ["3.2", "3.3", "3.4", "4.0"]
+        ruby: ["3.3", "3.4", "4.0"]
         os: [ubuntu-latest, macos-latest, windows-latest]
     env:
       CI: "true"
@@ -102,12 +102,6 @@ jobs:
       - name: Install toolchain via mise (Windows)
         if: runner.os == 'Windows'
         uses: jdx/mise-action@v4
-
-      - name: Download Ruby 3.2 binary
-        uses: actions/download-artifact@v8
-        with:
-          name: native-${{ matrix.os }}-ruby3.2
-          path: lib/ratatui_ruby/3.2
 
       - name: Download Ruby 3.3 binary
         uses: actions/download-artifact@v8
