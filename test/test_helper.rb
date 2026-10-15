@@ -17,15 +17,12 @@ begin
   require "simplecov"
   SimpleCov.coverage_dir "tmp/coverage"
   SimpleCov.start do
-    add_filter "test/"
-    add_filter "examples/"
-    add_filter "tasks/"
-    add_filter "ext/"
+    merging false
+    skip "test/"
+    skip "examples/"
+    skip "tasks/"
+    skip "ext/"
   end
-  # minitest/autorun runs the tests in an at_exit hook registered before this one, so
-  # SimpleCov's own at_exit hook would fire first and report before any test ran.
-  # Its Minitest plugin reports from Minitest.after_run instead once this is set.
-  SimpleCov.external_at_exit = true
 rescue LoadError
   # SimpleCov not installed
 end
