@@ -16,6 +16,7 @@ gem "chroma"
 gem "wcag_color_contrast"
 
 gem "minitest", "~> 5.16"
+gem "simplecov", "~> 0.22"
 
 gem "rubocop", "~> 1.21"
 gem "rubycritic", "~> 4.11"

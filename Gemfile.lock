@@ -267,6 +267,7 @@ DEPENDENCIES
   rdoc (~> 7.0)
   rubocop (~> 1.21)
   rubycritic (~> 4.11)
+  simplecov (~> 0.22)
   steep
   wcag_color_contrast
 
