@@ -216,4 +216,42 @@ class TestTestHelper < Minitest::Test
     input = ["line one", "line two"]
     assert_equal input, normalize_snapshots(input)
   end
+
+  def test_with_test_terminal_keeps_the_app_from_replacing_the_terminal
+    with_test_terminal(4, 1) do
+      RatatuiRuby.draw { |f| f.render_widget(RatatuiRuby::Widgets::Paragraph.new(text: "kept"), f.area) }
+
+      assert_nil RatatuiRuby.init_terminal
+      assert_nil RatatuiRuby.restore_terminal
+      assert_equal ["kept"], buffer_content
+    end
+  end
+
+  def test_with_test_terminal_restores_the_terminal_lifecycle_afterward
+    lifecycle = -> { %i[init_terminal restore_terminal].map { |name| RatatuiRuby.method(name).unbind } }
+    before = lifecycle.call
+
+    with_test_terminal(4, 1) { nil }
+
+    assert_equal before, lifecycle.call
+  end
+
+  def test_nested_with_test_terminal_keeps_the_outer_lifecycle_suppressed
+    with_test_terminal(4, 1) do
+      with_test_terminal(4, 1) { nil }
+
+      assert_nil RatatuiRuby.init_terminal
+    end
+  end
+
+  def test_test_helper_loads_without_minitest_mock
+    script = <<~RUBY
+      require "ratatui_ruby/test_helper"
+      abort "loaded minitest/mock" if $LOADED_FEATURES.any? { |f| f.end_with?("minitest/mock.rb") }
+    RUBY
+
+    output = IO.popen([RbConfig.ruby, "-I", "lib", "-e", script], err: [:child, :out], &:read)
+
+    assert_predicate $?, :success?, output
+  end
 end

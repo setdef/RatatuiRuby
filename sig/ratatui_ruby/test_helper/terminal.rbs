@@ -15,6 +15,7 @@ module RatatuiRuby
       def cursor_position: () -> { x: Integer, y: Integer }
       def get_cell: (Integer x, Integer y) -> Cell
       def print_buffer: () -> void
+      private def _without_terminal_lifecycle: () { () -> void } -> void
     end
   end
 end

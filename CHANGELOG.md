@@ -19,6 +19,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Fixed
 
+- **Test helper on Minitest 6**: `require "ratatui_ruby/test_helper"` no longer fails with `cannot load such file -- minitest/mock`. Minitest 6 moved mocks into the separate `minitest-mock` gem, and the test helper no longer uses them.
 - **Underline color in custom widgets**: A cell drawn with `Draw.cell` now keeps its `underline_color`. Before, the underline used the text color.
 - **Scrollbar thumb length**: A `Scrollbar` thumb now keeps the same length as it moves and stops inside the track at the end. Before, it could change length while scrolling and run past the track.
 - **Halfwidth sound marks**: The halfwidth katakana sound marks `ﾞ` and `ﾟ` now take a column of their own, as terminals display them. Before, text after them was laid out one column too far left.

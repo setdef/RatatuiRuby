@@ -6,7 +6,6 @@
 #++
 
 require "timeout"
-require "minitest/mock"
 
 module RatatuiRuby
   module TestHelper
@@ -78,23 +77,45 @@ module RatatuiRuby
         # Flush any lingering events from previous tests
         while (event = RatatuiRuby.poll_event) && !event.none?; end
 
-        RatatuiRuby.stub :init_terminal, nil do
-          RatatuiRuby.stub :restore_terminal, nil do
-            @_ratatui_test_terminal_active = true
-            timeout = opts.fetch(:timeout, 2)
-            if timeout
-              Timeout.timeout(timeout) do
-                yield
-              end
-            else
+        _without_terminal_lifecycle do
+          @_ratatui_test_terminal_active = true
+          timeout = opts.fetch(:timeout, 2)
+          if timeout
+            Timeout.timeout(timeout) do
               yield
             end
-          ensure
-            @_ratatui_test_terminal_active = false
+          else
+            yield
           end
+        ensure
+          @_ratatui_test_terminal_active = false
         end
       ensure
         RatatuiRuby.restore_terminal
+      end
+
+      # Makes RatatuiRuby.init_terminal and RatatuiRuby.restore_terminal do
+      # nothing while the block runs. The app under test calls them to set up
+      # and tear down a real terminal, which would replace the test terminal.
+      #
+      # Afterward, each method is put back exactly as it was. One defined on
+      # RatatuiRuby itself, like an outer test terminal's, is redefined; one
+      # inherited from TerminalLifecycle is uncovered by removing the override.
+      private def _without_terminal_lifecycle
+        lifecycle = RatatuiRuby.singleton_class
+        originals = %i[init_terminal restore_terminal].to_h do |name|
+          [name, (lifecycle.instance_method(name) if lifecycle.instance_methods(false).include?(name))]
+        end
+        originals.each do |name, original|
+          lifecycle.remove_method(name) if original
+          lifecycle.define_method(name) { |*, **| nil }
+        end
+        yield
+      ensure
+        originals&.each do |name, original|
+          lifecycle.remove_method(name) if lifecycle.instance_methods(false).include?(name)
+          lifecycle.define_method(name, original) if original
+        end
       end
 
       ##
