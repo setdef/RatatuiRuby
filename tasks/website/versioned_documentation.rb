@@ -6,8 +6,15 @@
 #++
 
 require_relative "../rdoc_config"
+require_relative "source_tree"
 
 class VersionedDocumentation
+  # Earlier releases locked RDoc 6.15 or 7.0, which render some markup wrongly
+  # and predate the Aliki theme the site relies on. 7.2.0 is the oldest RDoc
+  # whose output the site accepts; a version locking a newer one builds with
+  # its own.
+  RDOC_FLOOR = "7.2.0"
+
   def initialize(version)
     @version = version
   end
@@ -16,16 +23,13 @@ class VersionedDocumentation
     puts "Building documentation for #{@version.name}..."
 
     absolute_path = File.absolute_path(path)
-    gemfile_path = File.absolute_path("Gemfile")
     custom_css_path = File.absolute_path("doc/custom.css")
-    rakefile_path = File.absolute_path("Rakefile")
-    tasks_dir_path = File.absolute_path("tasks")
 
     @version.checkout(globs:) do |source_path|
-      # Copy current Rakefile and tasks into the temp directory
-      # This ensures all versions use the latest example generation logic
-      FileUtils.cp(rakefile_path, File.join(source_path, "Rakefile"))
-      FileUtils.cp_r(tasks_dir_path, File.join(source_path, "tasks"))
+      # Each version builds with its own Ruby, bundle, and tasks, so upgrading
+      # RDoc or the doc tasks on trunk never changes an earlier version's docs.
+      tree = SourceTree.new(path: source_path)
+      tree.upgrade_rdoc_to(RDOC_FLOOR)
 
       Dir.chdir(source_path) do
         title = "#{project_name} #{@version.name}"
@@ -33,22 +37,20 @@ class VersionedDocumentation
 
         # Use rake rerdoc to ensure copy_examples runs
         # Set environment variables to override rdoc settings
-        success = system(
+        success = tree.run(
+          "bundle install --quiet && bundle exec rake rerdoc",
           {
-            "BUNDLE_GEMFILE" => gemfile_path,
             "RDOC_OUTPUT" => absolute_path,
             "RDOC_TITLE" => title,
             "RDOC_CUSTOM_CSS" => custom_css_path,
-          },
-          "bundle exec rake rerdoc"
+          }
         )
 
         # Fall back to direct rdoc call if rake fails for any reason
         unless success
           puts "  Rake task failed, falling back to direct rdoc call..."
           files = globs.flat_map { |glob| Dir[glob] }.uniq
-          system(
-            { "BUNDLE_GEMFILE" => gemfile_path },
+          tree.run(
             "bundle exec rdoc -o #{absolute_path} --main #{RDocConfig::MAIN} --title '#{title}' --template-stylesheets \"#{custom_css_path}\" #{files.join(' ')}"
           )
         end
