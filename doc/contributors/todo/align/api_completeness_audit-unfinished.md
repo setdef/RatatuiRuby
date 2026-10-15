@@ -26,6 +26,8 @@ These documents catalog EVERY public feature, method, function, enum variant, an
 | Terminal::clear | ratatui-core/src/terminal/terminal.rs:540 | ❌ |
 | Terminal::swap_buffers | ratatui-core/src/terminal/terminal.rs:562 | ❌ |
 | CompletedFrame struct | ratatui-core/src/terminal/frame.rs:40 | ❌ |
+| Terminal::apply_buffer | ratatui-core/src/terminal/render.rs:239 | ❌ |
+| Terminal::apply_buffer_with_cursor | ratatui-core/src/terminal/render.rs:288 | ❌ |
 
 **Notes:**
 - **Terminal struct**: No direct Terminal object; abstracted behind `RatatuiRuby` module methods
@@ -56,6 +58,18 @@ These documents catalog EVERY public feature, method, function, enum variant, an
 | StyledGrapheme struct | ratatui-core/src/text/grapheme.rs:12 | ❌ |
 | ToLine trait | ratatui-core/src/text/line.rs:810 | ❌ |
 
+## Symbol Sets
+
+| Feature Name | File/Line | Status |
+|--------------|-----------|--------|
+| Marker::Quadrant | ratatui-core/src/symbols/marker.rs:33 | ⚠️ |
+| Marker::Sextant | ratatui-core/src/symbols/marker.rs:44 | ⚠️ |
+| Marker::Octant | ratatui-core/src/symbols/marker.rs:55 | ⚠️ |
+| Marker::Custom(char) | ratatui-core/src/symbols/marker.rs:57 | ❌ |
+
+**Notes:**
+- **Marker::Quadrant/Sextant/Octant**: `Canvas` accepts them, but `Dataset` in a `Chart` does not, and draws with `:dot` instead
+
 ## Widgets
 
 ### Block Widget
@@ -68,6 +82,21 @@ These documents catalog EVERY public feature, method, function, enum variant, an
 | BorderType::HeavyTripleDashed | ratatui-widgets/src/borders.rs:113 | ❌ |
 | BorderType::LightQuadrupleDashed | ratatui-widgets/src/borders.rs:121 | ❌ |
 | BorderType::HeavyQuadrupleDashed | ratatui-widgets/src/borders.rs:129 | ❌ |
+| Block::shadow | ratatui-widgets/src/block.rs:731 | ❌ |
+| Shadow struct | ratatui-widgets/src/block/shadow.rs:61 | ❌ |
+| Shadow::overlay | ratatui-widgets/src/block/shadow.rs:162 | ❌ |
+| Shadow::block | ratatui-widgets/src/block/shadow.rs:179 | ❌ |
+| Shadow::light_shade | ratatui-widgets/src/block/shadow.rs:192 | ❌ |
+| Shadow::medium_shade | ratatui-widgets/src/block/shadow.rs:205 | ❌ |
+| Shadow::dark_shade | ratatui-widgets/src/block/shadow.rs:225 | ❌ |
+| Shadow::symbol | ratatui-widgets/src/block/shadow.rs:239 | ❌ |
+| Shadow::custom | ratatui-widgets/src/block/shadow.rs:251 | ❌ |
+| Shadow::new | ratatui-widgets/src/block/shadow.rs:262 | ❌ |
+| Shadow::style | ratatui-widgets/src/block/shadow.rs:268 | ❌ |
+| Shadow::offset | ratatui-widgets/src/block/shadow.rs:278 | ❌ |
+| CellEffect trait | ratatui-widgets/src/block/shadow.rs:85 | ❌ |
+| Dimmed struct | ratatui-widgets/src/block/shadow.rs:326 | ❌ |
+| dimmed | ratatui-widgets/src/block/shadow.rs:342 | ❌ |
 
 ### Table Widget
 
@@ -92,6 +121,7 @@ These documents catalog EVERY public feature, method, function, enum variant, an
 | TableState::select_previous_column | ratatui-widgets/src/table/state.rs:388 | ❌ |
 | TableState::scroll_down_by | ratatui-widgets/src/table/state.rs:475 | ❌ |
 | TableState::scroll_up_by | ratatui-widgets/src/table/state.rs:494 | ❌ |
+| Cell::column_span | ratatui-widgets/src/table/cell.rs:134 | ❌ |
 
 **Notes:**
 - **TableState**: Implemented as Data.define attributes on Table widget itself (selected_row, selected_column, offset) instead of separate state object
@@ -117,6 +147,14 @@ These documents catalog EVERY public feature, method, function, enum variant, an
 - **ListState**: Implemented as Data.define attributes on List widget itself (selected_index, offset) instead of separate state object
 | ListState::scroll_down_by | ratatui-widgets/src/list/state.rs:248 | ❌ |
 | ListState::scroll_up_by | ratatui-widgets/src/list/state.rs:267 | ❌ |
+
+### Chart Widget
+
+| Feature Name | File/Line | Status |
+|--------------|-----------|--------|
+| GraphType::Bar | ratatui-widgets/src/chart.rs:170 | ❌ |
+| GraphType::Area | ratatui-widgets/src/chart.rs:175 | ❌ |
+| Dataset::fill_to_y | ratatui-widgets/src/chart.rs:440 | ❌ |
 
 ### Sparkline Widget
 
@@ -149,6 +187,16 @@ These documents catalog EVERY public feature, method, function, enum variant, an
 | Painter struct | ratatui-widgets/src/canvas.rs:403 | ❌ |
 | Label struct | ratatui-widgets/src/canvas.rs:61 | ❌ |
 | Points shape | ratatui-widgets/src/canvas/points.rs:7 | ❌ |
+| FilledLine shape | ratatui-widgets/src/canvas/line.rs:176 | ❌ |
+
+### Other Widgets
+
+| Feature Name | File/Line | Status |
+|--------------|-----------|--------|
+| Fill struct | ratatui-widgets/src/fill.rs:51 | ❌ |
+| Fill::new | ratatui-widgets/src/fill.rs:63 | ❌ |
+| Fill::style | ratatui-widgets/src/fill.rs:78 | ❌ |
+| Fill::symbol | ratatui-widgets/src/fill.rs:87 | ❌ |
 
 ## Buffer Features
 
@@ -167,6 +215,12 @@ These documents catalog EVERY public feature, method, function, enum variant, an
 | Buffer::reset | ratatui-core/src/buffer/buffer.rs:427 | ❌ |
 | Cell::set_style | ratatui-core/src/buffer/cell.rs:153 | ❌ |
 | Cell::reset | ratatui-core/src/buffer/cell.rs:193 | ❌ |
+| Cell::diff_option | ratatui-core/src/buffer/cell.rs:62 | ❌ |
+| Cell::set_diff_option | ratatui-core/src/buffer/cell.rs:241 | ❌ |
+| CellDiffOption::None | ratatui-core/src/buffer/cell.rs:15 | ❌ |
+| CellDiffOption::Skip | ratatui-core/src/buffer/cell.rs:20 | ❌ |
+| CellDiffOption::AlwaysUpdate | ratatui-core/src/buffer/cell.rs:26 | ❌ |
+| CellDiffOption::ForcedWidth | ratatui-core/src/buffer/cell.rs:31 | ❌ |
 
 **Notes:**
 - **Buffer**: Read-only access implemented via `RatatuiRuby.get_cell_at`. Direct mutation methods not exposed in Ruby API
@@ -194,6 +248,7 @@ These documents catalog EVERY public feature, method, function, enum variant, an
 | WindowSize struct | ratatui-core/src/backend.rs:130 | ❌ |
 | TermionBackend | ratatui-termion/src/lib.rs:* | ❌ |
 | TermwizBackend | ratatui-termwiz/src/lib.rs:* | ❌ |
+| TerminaBackend | ratatui-termina/src/lib.rs:82 | ❌ |
 
 **Notes:**
 - **Backend trait**: Abstracted away. Terminal uses Crossterm backend internally, not exposed to Ruby API

@@ -283,7 +283,6 @@ These documents catalog EVERY public feature, method, function, enum variant, an
 | Dataset::graph_type | ratatui-widgets/src/chart.rs:328 | ✅ |
 | GraphType::Scatter | ratatui-widgets/src/chart.rs:161 | ✅ |
 | GraphType::Line | ratatui-widgets/src/chart.rs:167 | ✅ |
-| GraphType::Bar | ratatui-widgets/src/chart.rs:170 | ✅ |
 | LegendPosition::TopLeft | ratatui-widgets/src/chart.rs:184 | ✅ |
 | LegendPosition::Top | ratatui-widgets/src/chart.rs:179 | ✅ |
 | LegendPosition::TopRight | ratatui-widgets/src/chart.rs:182 | ✅ |
