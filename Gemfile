@@ -19,8 +19,7 @@ gem "minitest", "~> 5.16"
 gem "simplecov", "~> 1.3"
 
 gem "rubocop", "~> 1.21"
-gem "rubycritic", "~> 4.11"
-gem "ostruct", "~> 0.6.3"
+gem "rubycritic", "~> 5.0"
 gem "inch", "~> 0.4"
 
 gem "steep"
