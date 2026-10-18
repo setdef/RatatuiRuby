@@ -88,6 +88,10 @@ CARGO_BUILD_TARGET = "x86_64-pc-windows-gnu"
 }
 gem install bundler:4.0.3
 
+# A gem in the per-user gem directory may have been built for another Ruby,
+# so install the bundle inside the repo instead.
+bundle config set --local path vendor/bundle
+
 if ($env:CI -eq "true") {
   bundle config set --local frozen true
 }

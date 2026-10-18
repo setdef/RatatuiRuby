@@ -16,6 +16,10 @@ mise x -- rustup component add rustfmt clippy
 mise x -- pip install 'reuse[charset-normalizer]'
 mise x -- gem install bundler:4.0.3
 
+# A gem in the per-user gem directory may have been built for another Ruby,
+# so install the bundle inside the repo instead.
+mise x -- bundle config set --local path vendor/bundle
+
 if [ "${CI:-}" = "true" ]; then
   bundle config set --local frozen 'true'
 fi

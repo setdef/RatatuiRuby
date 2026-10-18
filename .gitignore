@@ -10,6 +10,7 @@
 /pkg/
 /spec/reports/
 /tmp/
+/vendor/bundle/
 /www/
 site.tar.gz
 .output.txt
