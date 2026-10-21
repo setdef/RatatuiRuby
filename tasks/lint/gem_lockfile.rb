@@ -11,10 +11,6 @@
 # gems against the Ruby that resolves it. A lockfile resolved on the newest
 # Ruby can hold gems the oldest one can't install.
 class GemLockfile < Data.define(:specs)
-  def self.current
-    new(specs: Bundler.load.specs.to_a)
-  end
-
   def gems_too_new_for(ruby)
     specs.reject { |spec| spec.required_ruby_version.satisfied_by?(ruby) }
   end

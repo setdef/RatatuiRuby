@@ -141,7 +141,7 @@ namespace :lint do
     require_relative "lint/gem_lockfile"
     require_relative "lint/supported_rubies"
 
-    GemLockfile.current.verify(SupportedRubies.of("ratatui_ruby.gemspec").oldest)
+    GemLockfile.new(specs: Bundler.load.specs.to_a).verify(SupportedRubies.of("ratatui_ruby.gemspec").oldest)
   end
 
   task docs: %w[autodoc rubycritic safe_rdoc_coverage reuse:lint]
