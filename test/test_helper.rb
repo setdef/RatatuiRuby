@@ -57,6 +57,7 @@ end
 RatatuiRuby.experimental_warnings = false
 
 require "minitest/autorun"
+require "minitest/mock"
 
 # Defensive session-state isolation.
 # Tests that call init_test_terminal directly (without with_test_terminal)

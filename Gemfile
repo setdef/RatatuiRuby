@@ -15,7 +15,8 @@ gem "rake", "~> 13.0"
 gem "chroma"
 gem "wcag_color_contrast"
 
-gem "minitest", "~> 5.16"
+gem "minitest", "~> 6.0"
+gem "minitest-mock", "~> 5.27"
 gem "simplecov", "~> 1.3"
 
 gem "rubocop", "~> 1.21"
