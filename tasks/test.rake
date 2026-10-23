@@ -7,13 +7,6 @@
 
 require "minitest/test_task"
 
-namespace :cargo do
-  desc "Run cargo tests"
-  task :test do
-    sh "cd ext/ratatui_ruby && cargo test"
-  end
-end
-
 # Clear the default test task created by Minitest::TestTask if it exists
 Rake::Task["test"].clear if Rake::Task.task_defined?("test")
 

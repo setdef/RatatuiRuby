@@ -121,8 +121,14 @@ jobs:
           name: native-${{ matrix.os }}-ruby4.0
           path: lib/ratatui_ruby/4.0
 
+      - name: Install gems
+        run: |
+          mise x -- bundle config set --local path vendor/bundle
+          mise x -- bundle config set --local frozen true
+          mise x -- bundle install
+
       - name: Build platform gem
-        run: ruby tasks/release/platform_gem.rb
+        run: mise x -- bundle exec rake release:platform_gem
 
       - name: Upload gem artifact
         uses: actions/upload-artifact@v7

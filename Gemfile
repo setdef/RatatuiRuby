@@ -26,3 +26,7 @@ gem "inch", "~> 0.4"
 gem "steep"
 
 gem "nokogiri" # For RDoc sidebar post-processing
+
+group :development do
+  gem "ratatui_ruby-devtools", "~> 0.3"
+end
