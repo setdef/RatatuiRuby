@@ -22,5 +22,5 @@ gem "simplecov", "~> 1.3"
 gem "steep"
 
 group :development do
-  gem "ratatui_ruby-devtools", "~> 0.3"
+  gem "ratatui_ruby-devtools", "~> 0.4"
 end
