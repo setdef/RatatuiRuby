@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Commits too small to hold copyright. The license tasks and GitHub's blame
+# view credit their lines to the commits before them.
+
+# Corrects relative links to examples/ in four guides.
+5fa1015b7c33f1c1a100ab8d9e74e612662e8366
+
+# Corrects relative links in the guides, AGENTS.md, and the changelog.
+4a7792cfd0346ee6579accd089394827388fcf40
