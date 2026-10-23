@@ -179,7 +179,7 @@ Want to help develop **ratatui_ruby**? Check out the [contribution guide on the 
 
 The library is [LGPL-3.0-or-later](./LICENSES/LGPL-3.0-or-later.txt): you can use it in proprietary applications, but you must share changes you make to **ratatui_ruby** itself. Documentation snippets and widget examples are [MIT-0](./LICENSES/MIT-0.txt): copy and use them without attribution.
 
-Documentation is [CC-BY-SA-4.0](./LICENSES/CC-BY-SA-4.0.txt). Build tooling and full app examples are [AGPL-3.0-or-later](./LICENSES/AGPL-3.0-or-later.txt). See each file's SPDX comment for specifics.
+Documentation is [CC-BY-SA-4.0](./LICENSES/CC-BY-SA-4.0.txt). Tests, type signatures, build tooling, and full app examples are [AGPL-3.0-or-later](./LICENSES/AGPL-3.0-or-later.txt). See each file's SPDX comment for specifics.
 
 Some parts of this program are copied from other sources under appropriate reuse licenses, and the copyright belongs to their respective owners. See the [REUSE Specification – Version 3.3](https://reuse.software/spec-3.3/) for details.
 

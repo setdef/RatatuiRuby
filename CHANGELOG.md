@@ -19,6 +19,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Fixed
 
+- **Type signatures took the library's license**: ratatui_ruby moved to the LGPL-3.0-or-later in 0.9.0 so your app can link the library without sharing its own code. The RBS signatures in `sig/` took that license too, but apps never link them; they serve type checking only. They now take the AGPL-3.0-or-later, like the project's tests and tooling, and the library your app loads stays LGPL-3.0-or-later. Signatures for the widget and verify examples stay MIT-0.
 - **Test helper on Minitest 6**: `require "ratatui_ruby/test_helper"` no longer fails with `cannot load such file -- minitest/mock`. Minitest 6 moved mocks into the separate `minitest-mock` gem, and the test helper no longer uses them.
 - **Underline color in custom widgets**: A cell drawn with `Draw.cell` now keeps its `underline_color`. Before, the underline used the text color.
 - **Scrollbar thumb length**: A `Scrollbar` thumb now keeps the same length as it moves and stops inside the track at the end. Before, it could change length while scrolling and run past the track.

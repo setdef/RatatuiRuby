@@ -12,9 +12,9 @@
 # If no paths are given, processes lib/, ext/, test/, examples/, tasks/, bin/.
 #
 # License selection by directory:
-# - lib/, ext/, test/ → LGPL-3.0-or-later
+# - lib/, ext/ → LGPL-3.0-or-later
 # - examples/widget_*, examples/verify_* → MIT-0
-# - examples/app_*, tasks/, bin/ → AGPL-3.0-or-later
+# - test/, sig/, examples/app_*, tasks/, bin/ → AGPL-3.0-or-later
 
 require_relative "license_utils"
 
@@ -25,7 +25,7 @@ YOUR_COPYRIGHT = "#{YOUR_NAME} <#{YOUR_EMAIL}>"
 
 def license_for_file(filepath)
   case filepath
-  when %r{^(lib|sig/ratatui_ruby|ext|test)/}
+  when %r{^(lib|ext)/}
     "LGPL-3.0-or-later"
   when %r{^(examples|sig/examples)/(widget_|verify_)}
     "MIT-0"
