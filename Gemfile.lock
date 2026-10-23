@@ -260,18 +260,14 @@ DEPENDENCIES
   debug (>= 1.0)
   faker (~> 3.8.0)
   fiddle
-  inch (~> 0.4)
   irb
   minitest (~> 6.0)
   minitest-mock (~> 5.27)
-  nokogiri
   rake (~> 13.0)
   rake-compiler (~> 1.2)
   ratatui_ruby!
   ratatui_ruby-devtools (~> 0.3)
   rdoc (~> 8.1)
-  rubocop (~> 1.21)
-  rubycritic (~> 5.0)
   simplecov (~> 1.3)
   steep
   wcag_color_contrast

@@ -19,13 +19,7 @@ gem "minitest", "~> 6.0"
 gem "minitest-mock", "~> 5.27"
 gem "simplecov", "~> 1.3"
 
-gem "rubocop", "~> 1.21"
-gem "rubycritic", "~> 5.0"
-gem "inch", "~> 0.4"
-
 gem "steep"
-
-gem "nokogiri" # For RDoc sidebar post-processing
 
 group :development do
   gem "ratatui_ruby-devtools", "~> 0.3"
