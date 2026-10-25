@@ -1,94 +1,14 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-# SPDX-FileCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
 # SPDX-License-Identifier: AGPL-3.0-or-later
+#++
 
-# ==============================================================================
-# bin/agent_rake: The AI-Friendly Build Wrapper
-# ==============================================================================
-#
-# WHY THIS EXISTS:
-# 1. Noise Reduction for AI Agents:
-#    Compiling Rust extensions (Via Cargo) and installing gems produces massive
-#    amounts of "noisy" output (compilation steps, warnings, progress bars).
-#    This noise fills up an AI agent's limited context window, truncating the
-#    actual error message we need to fix.
-#
-# 2. Atomic Dump vs. Streaming:
-#    Humans like "Streaming" (seeing lines appear in real-time).
-#    Agents need an "Atomic Dump" of *only* the failure.
-#    If we stream, the agent's context fills with noise before the failure occurs.
-#    By capturing to a file, we can discard the noise and only show the failure.
-#
-# 3. Merging Stdout/Stderr:
-#    We merge stdout and stderr because:
-#    - Minitest prints failures to stdout, not stderr.
-#    - We need to preserve temporal order (e.g., a "warning" in stderr right
-#      before a "failure" in stdout).
-#
-# 4. Transparent Passthrough:
-#    This script wraps `bundle exec rake`. Any arguments you pass to this script
-#    (e.g., `bin/agent_rake test:ruby`) are passed directly to rake.
-#    Environment variables (e.g., `TEST=...`) are inherited naturally.
-#
-# ==============================================================================
+# Development wrapper for the agent_rake executable.
+# Loads the bundle, then delegates to the agent_rake in
+# ratatui_ruby-devtools.
 
-require "fileutils"
-require "shellwords"
-
-# Persist the log file so it can be inspected manually if summarization fails.
-# We do NOT use a Tempfile because we want the log to survive script exit.
-LOG_FILE = File.expand_path(File.join(__dir__, "..", "tmp", "agent_rake.log"))
-FileUtils.mkdir_p(File.dirname(LOG_FILE))
-
-cmd = "bundle exec rake #{ARGV.shelljoin}"
-
-# Run the command, redirecting everything to the log file.
-# This silences the terminal output completely unless there's a failure.
-success = system(cmd, [:out, :err] => LOG_FILE)
-
-if success
-  puts "PASS"
-  exit 0
-else
-  puts "FAIL"
-  puts "Full output saved to: #{LOG_FILE}"
-  puts "---"
-  puts "Failure Summary (extracted from log):"
-  puts
-
-  begin
-    # aggressively force UTF-8 to avoid "incompatible encoding regexp match" errors
-    # when the log contains binary data or weird sequences from Cargo.
-    raw_content = File.binread(LOG_FILE)
-    content = raw_content.encode("UTF-8", invalid: :replace, undef: :replace, replace: "?")
-
-    # Try to extract meaningful failure information
-    if content.include?("Failure:") || content.include?("Error:")
-      # Regex explanation:
-      # Look for a line starting with "  1) Failure:"
-      # Capture everything until the next "  N) Failure:" or End Of String (\Z).
-      # /m (multiline) mode allows . to match newlines.
-      failures = content.scan(/(?:^\s*\d+\) (?:Failure|Error):.*?(?=\n\s*\d+\) (?:Failure|Error):|\Z))/ms)
-
-      if failures.any?
-        puts failures.join("\n")
-      else
-        # Fallback: Print lines containing "Error" or "Failure" with context
-        puts content.lines.grep(/(Failure:|Error:|error\[)/).first(20).join
-        puts "... (summarization failed to find full blocks, see log for more)"
-      end
-    else
-      # If no standard Ruby/Minitest failure patterns found, it might be a build error.
-      # Dump the last 50 lines which usually contain the crash/build error.
-      puts "No structured failure pattern detected. Dumping last 50 lines:"
-      puts content.lines.last(50).join
-    end
-  rescue => e
-    puts "Error summarizing log file: #{e.class}: #{e.message}"
-  end
-
-  puts "Use `grep` or run `cat #{LOG_FILE}` to see details."
-  exit 1
-end
+require "bundler/setup"
+load Gem.bin_path("ratatui_ruby-devtools", "agent_rake")
