@@ -202,7 +202,7 @@ bundle exec rake bump:exact[1.0.0-beta.1]
 bundle exec rake release
 
 # Watch builds
-bin/hbs                               # Wait for SourceHut builds
+bin/hbs                               # Wait for GitHub Actions builds
 bin/hbs && bundle exec rake release   # Release only if builds pass
 ```
 <!-- SPDX-SnippetEnd -->
