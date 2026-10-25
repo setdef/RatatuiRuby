@@ -27,7 +27,7 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   # Programmatic activation
@@ -35,10 +35,10 @@ module RatatuiRuby
   #
   #   # Or use the convenience alias
   #   RatatuiRuby.debug_mode!
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   module Debug
     @rust_backtrace_enabled = false
     @debug_mode_enabled = false
@@ -67,16 +67,8 @@ module RatatuiRuby
       # Safe to call multiple times; subsequent calls are no-ops.
       #
       # [source] <tt>:env</tt> if called from RR_DEBUG env var,
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #          <tt>:test</tt> from TestHelper (skips remote debugging),
       #          <tt>:programmatic</tt> otherwise.
-      #--
-      # SPDX-SnippetEnd
-      #++
       def enable!(source: :programmatic)
         return @socket_path if @debug_mode_enabled
 
@@ -143,11 +135,14 @@ module RatatuiRuby
       # attach from another terminal via UNIX socket.
       #
       # Returns one of:
-      # <tt>:open</tt> Stop at program start, wait for debugger attach.
-      #                   Activated when <tt>RR_DEBUG=1</tt> is set at startup.
-      # <tt>:open_nonstop</tt> Continue running, attach whenever ready.
-      #                           Activated when <tt>enable!</tt> is called programmatically.
-      # <tt>nil</tt> No remote debugging configured.
+      #
+      # [<tt>:open</tt>]
+      #   Stop at program start, wait for debugger attach. Activated when
+      #   <tt>RR_DEBUG=1</tt> is set at startup.
+      # [<tt>:open_nonstop</tt>]
+      #   Continue running, attach whenever ready. Activated when
+      #   <tt>enable!</tt> is called programmatically.
+      # [<tt>nil</tt>] No remote debugging configured.
       public def remote_debugging_mode
         @remote_debugging_mode
       end
@@ -168,7 +163,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   RUST_BACKTRACE=1 ruby -e 'require "ratatui_ruby"; RatatuiRuby::Debug.test_panic!'
@@ -190,7 +185,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   RatatuiRuby::Debug.suppress_debug_mode do
