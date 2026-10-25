@@ -33,16 +33,8 @@ module RatatuiRuby
   #
   # - <tt>tui.table(rows: [...])</tt> coerces types, normalizes arrays, etc.
   # - <tt>RatatuiRuby::Widgets::Table.new(rows: [...])</tt> passes arguments directly
-  #--
-  # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
-  # SPDX-License-Identifier: MIT-0
-  #++
   #   to Rust without coercion — invalid types will raise <tt>TypeError</tt>.
   #
-  #--
-  # SPDX-SnippetEnd
-  #++
   # If you bypass the factories and call <tt>Widgets::Table.new</tt> directly,
   # you're responsible for providing correctly-typed arguments. This is useful
   # for debugging (to trigger real Rust TypeErrors) or performance-critical code.
@@ -72,7 +64,7 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   RatatuiRuby.run do |tui|

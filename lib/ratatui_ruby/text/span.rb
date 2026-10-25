@@ -17,7 +17,15 @@ module RatatuiRuby
     #
     # === Examples
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   Text::Span.new(content: "Error", style: Style.new(fg: :red, modifiers: [:bold]))
+    #--
+    # SPDX-SnippetEnd
+    #++
     class Span < Data.define(:content, :style)
       ##
       # :attr_reader: content
@@ -39,7 +47,15 @@ module RatatuiRuby
       #
       # === Example
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Text::Span.styled("Bold", Style::Style.new(modifiers: [:bold]))
+      #--
+      # SPDX-SnippetEnd
+      #++
       def self.styled(content, style = nil)
         new(content:, style:)
       end
@@ -53,7 +69,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   span = Text::Span.new(content: "Hello")
@@ -61,10 +77,10 @@ module RatatuiRuby
       #
       #   span = Text::Span.new(content: "你好")  # Chinese characters
       #   span.width  # => 4
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Returns: Integer.
       def width
         RatatuiRuby::Text.width(content.to_s)
@@ -78,16 +94,16 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   span = Text::Span.raw("test content")
       #   span.content  # => "test content"
       #   span.style    # => nil
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [content] String.
       #
       # Returns: Span.
@@ -105,17 +121,17 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   span = Text::Span.new(content: "test", style: Style::Style.new(fg: :green))
       #   patched = span.patch_style(Style::Style.new(bg: :yellow, modifiers: [:bold]))
       #   patched.style.fg  # => :green (preserved)
       #   patched.style.bg  # => :yellow (added)
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [patch] Style::Style to merge.
       #
       # Returns: Span.
@@ -139,16 +155,16 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   span = Text::Span.new(content: "styled", style: Style::Style.new(fg: :red))
       #   reset = span.reset_style
       #   reset.style  # => nil
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Returns: Span.
       def reset_style
         with(style: nil)

@@ -19,17 +19,17 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2025 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2025 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   cell = RatatuiRuby.get_cell_at(0, 0)
   #   cell.char   # => "H"
   #   cell.fg     # => :red
   #   cell.bold?  # => true
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   class Cell
     # The character displayed in the cell.
     attr_reader :symbol
@@ -56,14 +56,14 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   Cell.empty # => #<RatatuiRuby::Cell char=" ">
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     def self.empty
       new(symbol: " ", fg: nil, bg: nil, underline_color: nil, modifiers: [])
     end
@@ -74,14 +74,14 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   Cell.default # => #<RatatuiRuby::Cell char=" ">
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     def self.default
       empty
     end
@@ -94,14 +94,14 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   Cell.symbol("X") # => #<RatatuiRuby::Cell symbol="X">
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     def self.symbol(symbol)
       new(symbol:, fg: nil, bg: nil, underline_color: nil, modifiers: [])
     end

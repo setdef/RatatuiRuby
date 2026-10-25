@@ -21,7 +21,15 @@ module RatatuiRuby
     #
     # Run the interactive demo from the terminal:
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   ruby examples/widget_tabs/app.rb
+    #--
+    # SPDX-SnippetEnd
+    #++
     class Tabs < Data.define(:titles, :selected_index, :block, :divider, :highlight_style, :style, :padding_left, :padding_right)
       include CoerceableWidget
 

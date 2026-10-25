@@ -17,7 +17,7 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   @table_state = RatatuiRuby::TableState.new
@@ -28,10 +28,10 @@ module RatatuiRuby
   #     table = RatatuiRuby::Widgets::Table.new(rows: [...], widths: [...])
   #     frame.render_stateful_widget(table, frame.area, @table_state)
   #   end
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   class TableState
     ##
     # :method: new
@@ -154,16 +154,16 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   max_index = rows.size - 1
     #   return if (state.selected || 0) >= max_index
     #   state.select_next
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # (Native method implemented in Rust)
 
     ##
@@ -181,15 +181,15 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   return if (state.selected || 0) <= 0
     #   state.select_previous
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # (Native method implemented in Rust)
 
     ##
@@ -202,15 +202,15 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   return if (state.selected || 0) == 0
     #   state.select_first
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # (Native method implemented in Rust)
 
     ##
@@ -226,16 +226,16 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   max_index = rows.size - 1
     #   return if (state.selected || 0) == max_index
     #   state.select(max_index)
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # (Native method implemented in Rust)
 
     ##

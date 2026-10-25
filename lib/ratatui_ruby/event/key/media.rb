@@ -15,7 +15,15 @@ module RatatuiRuby
         # Media keys include: play, pause, stop, track controls, volume controls.
         # These are only available in terminals supporting the Kitty keyboard protocol.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.media? # => true for media_play, media_pause, etc.
+        #--
+        # SPDX-SnippetEnd
+        #++
         def media?
           @kind == :media
         end

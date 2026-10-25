@@ -14,7 +14,7 @@ Every interactive example should follow this pattern, living in its own director
 `examples/my_example/app.rb`:
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -97,7 +97,7 @@ Every example must also have an RBS file documenting its public methods. Type si
 `sig/examples/my_example/app.rbs`:
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```rbs
@@ -117,7 +117,7 @@ Examples are organized across three locations:
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```
@@ -214,7 +214,7 @@ Examples with mouse interaction should use the **Frame API**. By calling `@tui.l
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -231,7 +231,7 @@ Example tests live in a centralized test tree:
 `test/examples/my_example/test_app.rb`:
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -275,7 +275,7 @@ All example tests MUST use snapshot testing via the `assert_snapshots` API, not 
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -298,7 +298,7 @@ For examples with timestamps, random data, or other non-deterministic output:
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -331,7 +331,7 @@ When UI changes are intentional, regenerate all snapshots:
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```bash
@@ -377,7 +377,7 @@ Use the [Faker](https://github.com/faker-ruby/faker) gem with **deterministic se
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby

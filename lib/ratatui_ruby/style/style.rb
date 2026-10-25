@@ -20,7 +20,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   # Standard colors
@@ -28,10 +28,10 @@ module RatatuiRuby
     #
     #   # Hex colors
     #   Style::Style.new(fg: "#ff00ff")
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # === Supported Colors
     #
     # ==== Integer
@@ -45,16 +45,8 @@ module RatatuiRuby
     # * <tt>:black</tt>, <tt>:red</tt>, <tt>:green</tt>, <tt>:yellow</tt>,
     #   <tt>:blue</tt>, <tt>:magenta</tt>, <tt>:cyan</tt>, <tt>:gray</tt>
     # * <tt>:dark_gray</tt>, <tt>:light_red</tt>, <tt>:light_green</tt>,
-    #--
-    # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
-    # SPDX-License-Identifier: MIT-0
-    #++
     #   <tt>:light_yellow</tt>, <tt>:light_blue</tt>, <tt>:light_magenta</tt>,
     #   <tt>:light_cyan</tt>, <tt>:white</tt>
-    #--
-    # SPDX-SnippetEnd
-    #++
     # * <tt>:reset</tt> — Restores the terminal's default color.
     #
     # ==== String
@@ -127,7 +119,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Style.with(fg: :red, bg: :black, modifiers: [:bold])

@@ -32,7 +32,7 @@ Users need context. A single number ("90% CPU") tells you status, but not the tr
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```bash

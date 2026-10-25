@@ -21,7 +21,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   def test_parses_command_line_flags
@@ -50,7 +50,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   with_argv(["--help"]) do
@@ -78,7 +78,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   with_env("DEBUG", "1") do

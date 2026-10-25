@@ -30,7 +30,7 @@ If you're using a gem that might write to stdout/stderr, wrap its calls:
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -49,7 +49,7 @@ end
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -73,7 +73,7 @@ The `Logger` class from Ruby's standard library is the idiomatic solution:
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -96,7 +96,7 @@ end
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -126,7 +126,7 @@ If you need to write to stdout/stderr even when `guard_io` is active (e.g., for 
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -147,7 +147,7 @@ If your app supports both TUI and non-TUI modes (e.g., `my_app --no-tui`), call 
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -171,7 +171,7 @@ Some apps need to temporarily leave TUI mode for user interaction—like lazygit
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby

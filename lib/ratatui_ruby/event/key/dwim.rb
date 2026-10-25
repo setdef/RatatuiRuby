@@ -15,7 +15,15 @@ module RatatuiRuby
       module Dwim
         # Returns true if the key is a space character.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.space? # => true for " "
+        #--
+        # SPDX-SnippetEnd
+        #++
         def space?
           @code == " " && @modifiers.empty?
         end
@@ -24,7 +32,15 @@ module RatatuiRuby
 
         # Returns true if the key is Enter. Alias for carriage return.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.cr? # => true for enter
+        #--
+        # SPDX-SnippetEnd
+        #++
         def cr?
           @code == "enter" && @modifiers.empty?
         end
@@ -36,28 +52,60 @@ module RatatuiRuby
 
         # Returns true if the key is a single letter (a-z, A-Z).
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   Event::Key.new(code: "a").letter? # => true
+        #--
+        # SPDX-SnippetEnd
+        #++
         def letter?
           @code.length == 1 && @code.match?(/\A[A-Za-z]\z/)
         end
 
         # Returns true if the key is a digit (0-9).
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   Event::Key.new(code: "5").digit? # => true
+        #--
+        # SPDX-SnippetEnd
+        #++
         def digit?
           @code.length == 1 && @code.match?(/\A[0-9]\z/)
         end
 
         # Returns true if the key is alphanumeric.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   Event::Key.new(code: "a").alphanumeric? # => true
+        #--
+        # SPDX-SnippetEnd
+        #++
         def alphanumeric?
           letter? || digit?
         end
 
         # Returns true if the key is punctuation.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   Event::Key.new(code: "@", modifiers: ["shift"]).punctuation? # => true
+        #--
+        # SPDX-SnippetEnd
+        #++
         def punctuation?
           return false unless @code.length == 1
           !letter? && !digit? && !whitespace?
@@ -65,35 +113,75 @@ module RatatuiRuby
 
         # Returns true if the key is whitespace (space, enter, tab).
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   Event::Key.new(code: " ").whitespace? # => true
+        #--
+        # SPDX-SnippetEnd
+        #++
         def whitespace?
           @code == " " || @code == "enter" || @code == "tab"
         end
 
         # Returns true for interrupt (Ctrl+C).
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.interrupt? # => true for Ctrl+C
+        #--
+        # SPDX-SnippetEnd
+        #++
         def interrupt?
           @code == "c" && @modifiers == ["ctrl"]
         end
 
         # Returns true for end-of-file (Ctrl+D).
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.eof? # => true for Ctrl+D
+        #--
+        # SPDX-SnippetEnd
+        #++
         def eof?
           @code == "d" && @modifiers == ["ctrl"]
         end
 
         # Returns true for cancel (Esc or Ctrl+C).
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.cancel? # => true for Esc or Ctrl+C
+        #--
+        # SPDX-SnippetEnd
+        #++
         def cancel?
           (@code == "esc" && @modifiers.empty?) || interrupt?
         end
 
         # Returns true for SIGINT (Ctrl+C).
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.sigint? # => true for Ctrl+C
+        #--
+        # SPDX-SnippetEnd
+        #++
         def sigint?
           interrupt?
         end
@@ -102,7 +190,15 @@ module RatatuiRuby
 
         # Returns true for SIGTSTP (Ctrl+Z) - suspend/stop.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.suspend? # => true for Ctrl+Z
+        #--
+        # SPDX-SnippetEnd
+        #++
         def suspend?
           @code == "z" && @modifiers == ["ctrl"]
         end
@@ -112,7 +208,15 @@ module RatatuiRuby
 
         # Returns true for SIGQUIT (Ctrl+\).
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.quit? # => true for Ctrl+\
+        #--
+        # SPDX-SnippetEnd
+        #++
         def quit?
           @code == "\\" && @modifiers == ["ctrl"]
         end
@@ -123,7 +227,15 @@ module RatatuiRuby
 
         # Returns true if key is a navigation key.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   Event::Key.new(code: "up").navigation? # => true
+        #--
+        # SPDX-SnippetEnd
+        #++
         def navigation?
           NAVIGATION_KEYS.include?(@code) && @modifiers.empty?
         end
@@ -132,7 +244,15 @@ module RatatuiRuby
 
         # Returns true if key is an arrow key.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   Event::Key.new(code: "up").arrow? # => true
+        #--
+        # SPDX-SnippetEnd
+        #++
         def arrow?
           ARROW_KEYS.include?(@code) && @modifiers.empty?
         end
@@ -141,7 +261,15 @@ module RatatuiRuby
 
         # Returns true if key is a Vim movement key.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   Event::Key.new(code: "j").vim? # => true
+        #--
+        # SPDX-SnippetEnd
+        #++
         def vim?
           return true if VIM_MOVEMENT_KEYS.include?(@code) && @modifiers.empty?
           @code == "G" && @modifiers == ["shift"]

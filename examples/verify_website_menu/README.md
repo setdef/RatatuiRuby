@@ -11,6 +11,11 @@ This example exists as a documentation regression test. It ensures the website's
 
 ## Usage
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```ruby
 choices = ["Production", "Staging", "Development"]
 index = 0
@@ -50,6 +55,7 @@ end
 puts
 puts "Deploying to #{choices[index]}..."
 ```
+<!-- SPDX-SnippetEnd -->
 
 ## Features Demonstrated
 

@@ -20,7 +20,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   Text::Line.new(
@@ -60,7 +60,15 @@ module RatatuiRuby
 
       # Creates a simple line from a string.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Text::Line.from_string("Hello")
+      #--
+      # SPDX-SnippetEnd
+      #++
       def self.from_string(content, alignment: nil)
         new(spans: [Span.new(content:, style: nil)], alignment:)
       end
@@ -74,7 +82,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   line = Text::Line.new(spans: [
@@ -82,10 +90,10 @@ module RatatuiRuby
       #     Text::Span.new(content: "世界")
       #   ])
       #   line.width  # => 10 (6 ASCII + 4 CJK)
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Returns: Integer (number of terminal cells).
       def width
         RatatuiRuby::Text.width(spans.map { |s| s.content.to_s }.join)
@@ -100,16 +108,16 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   line = Text::Line.new(spans: [Text::Span.new(content: "Hello")])
       #   aligned = line.left_aligned
       #   aligned.alignment  # => :left
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Returns: Line.
       def left_aligned
         with(alignment: :left)
@@ -124,16 +132,16 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   line = Text::Line.new(spans: [Text::Span.new(content: "Hello")])
       #   centered = line.centered
       #   centered.alignment  # => :center
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Returns: Line.
       def centered
         with(alignment: :center)
@@ -148,16 +156,16 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   line = Text::Line.new(spans: [Text::Span.new(content: "Hello")])
       #   aligned = line.right_aligned
       #   aligned.alignment  # => :right
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Returns: Line.
       def right_aligned
         with(alignment: :right)
@@ -172,17 +180,17 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   line = Text::Line.new(spans: [Text::Span.new(content: "Hello, ")])
       #   extended = line.push_span(Text::Span.new(content: "world!"))
       #   extended.spans.size  # => 2
       #   line.spans.size      # => 1 (original unchanged)
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [span] Span to append.
       #
       # Returns: Line.
@@ -199,16 +207,16 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   line = Text::Line.new(spans: [Text::Span.new(content: "Hello")])
       #   styled = line.patch_style(Style::Style.new(fg: :red))
       #   styled.spans.first.style.fg  # => :red
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [patch] Style::Style to merge onto each span.
       #
       # Returns: Line.
@@ -224,7 +232,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   line = Text::Line.new(spans: [
@@ -232,10 +240,10 @@ module RatatuiRuby
       #   ])
       #   reset = line.reset_style
       #   reset.spans.first.style  # => nil
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Returns: Line.
       def reset_style
         with(spans: spans.map(&:reset_style))

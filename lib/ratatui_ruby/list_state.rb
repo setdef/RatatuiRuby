@@ -26,7 +26,7 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   @list_state = RatatuiRuby::ListState.new
@@ -38,10 +38,10 @@ module RatatuiRuby
   #   end
   #
   #   puts @list_state.offset # Scroll position after render
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   class ListState
     ##
     # :method: new
@@ -114,16 +114,16 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   max_index = items.size - 1
     #   return if (state.selected || 0) >= max_index
     #   state.select_next
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # (Native method implemented in Rust)
 
     ##
@@ -141,15 +141,15 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   return if (state.selected || 0) <= 0
     #   state.select_previous
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # (Native method implemented in Rust)
 
     ##
@@ -162,15 +162,15 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   return if (state.selected || 0) == 0
     #   state.select_first
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # (Native method implemented in Rust)
 
     ##
@@ -186,16 +186,16 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   max_index = items.size - 1
     #   return if (state.selected || 0) == max_index
     #   state.select(max_index)
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # (Native method implemented in Rust)
   end
 end

@@ -36,7 +36,7 @@ After exit, all inline outputs remain visible in terminal history. The fullscree
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```bash

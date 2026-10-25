@@ -21,7 +21,15 @@ module RatatuiRuby
     #
     # Run the interactive demo from the terminal:
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   ruby examples/widget_box/app.rb
+    #--
+    # SPDX-SnippetEnd
+    #++
     class Block < Data.define(:title, :titles, :title_alignment, :title_style, :borders, :border_style, :border_type, :border_set, :style, :padding, :children)
       include CoerceableWidget
 
@@ -31,7 +39,15 @@ module RatatuiRuby
       #
       # === Example
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Block.new(title: "Main").title # => "Main"
+      #--
+      # SPDX-SnippetEnd
+      #++
 
       ##
       # :attr_reader: titles
@@ -41,7 +57,15 @@ module RatatuiRuby
       #
       # === Example
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Block.new(titles: ["Top", { content: "Bottom", position: :bottom }]).titles
+      #--
+      # SPDX-SnippetEnd
+      #++
 
       ##
       # :attr_reader: title_alignment
@@ -51,7 +75,15 @@ module RatatuiRuby
       #
       # === Example
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Block.new(title_alignment: :center).title_alignment # => :center
+      #--
+      # SPDX-SnippetEnd
+      #++
 
       ##
       # :attr_reader: title_style
@@ -59,7 +91,15 @@ module RatatuiRuby
       #
       # === Example
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Block.new(title_style: Style.new(fg: :red)).title_style
+      #--
+      # SPDX-SnippetEnd
+      #++
 
       ##
       # :attr_reader: borders
@@ -69,7 +109,15 @@ module RatatuiRuby
       #
       # === Example
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Block.new(borders: [:left, :right]).borders # => [:left, :right]
+      #--
+      # SPDX-SnippetEnd
+      #++
 
       ##
       # :attr_reader: border_style
@@ -97,7 +145,15 @@ module RatatuiRuby
       #
       # === Example
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Block.new(border_set: { top_left: "1", top_right: "2", bottom_left: "3", bottom_right: "4", vertical_left: "5", vertical_right: "6", horizontal_top: "7", horizontal_bottom: "8" })
+      #--
+      # SPDX-SnippetEnd
+      #++
 
       ##
       # :attr_reader: style
@@ -113,7 +169,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Block.new(padding: 2).padding # => 2
@@ -132,7 +188,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Block.new(
@@ -208,28 +264,20 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   block = Block.new(borders: [:all], padding: 1)
       #   outer = Layout::Rect.new(x: 0, y: 0, width: 20, height: 10)
       #   inner = block.inner(outer)
       #   # => Rect(x: 2, y: 2, width: 16, height: 6)
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [area]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   The outer Rect to compute the inner area for.
       #
-      #--
-      # SPDX-SnippetEnd
-      #++
       # Returns a new Rect representing the inner content area.
       def inner(area)
         # Calculate border offsets

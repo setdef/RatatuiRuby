@@ -38,7 +38,7 @@ Most applications use `RatatuiRuby.run { }` which handles terminal setup and tea
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```bash

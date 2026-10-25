@@ -120,7 +120,15 @@ module RatatuiRuby
     #
     # Run the interactive demo from the terminal:
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   ruby examples/widget_chart/app.rb
+    #--
+    # SPDX-SnippetEnd
+    #++
     class Chart < Data.define(:datasets, :x_axis, :y_axis, :block, :style, :legend_position, :hidden_legend_constraints)
       include CoerceableWidget
 

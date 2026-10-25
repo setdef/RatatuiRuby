@@ -34,7 +34,7 @@ Widgets often float in a void. Without boundaries, interfaces become a chaotic m
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```bash

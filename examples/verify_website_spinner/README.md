@@ -11,6 +11,11 @@ This example exists as a documentation regression test. It ensures the website's
 
 ## Usage
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```ruby
 class Spinner
   def main
@@ -35,6 +40,7 @@ class Spinner
 end
 Spinner.new.main; puts
 ```
+<!-- SPDX-SnippetEnd -->
 
 ## Features Demonstrated
 

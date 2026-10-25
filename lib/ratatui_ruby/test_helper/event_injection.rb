@@ -23,7 +23,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   with_test_terminal do
@@ -34,10 +34,10 @@ module RatatuiRuby
     #
     #     @app.run
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     module EventInjection
       ##
       # Injects an event into the test terminal's event queue.
@@ -51,17 +51,17 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   inject_event(RatatuiRuby::Event::Key.new(code: "q"))
       #   inject_event(RatatuiRuby::Event::Mouse.new(kind: "down", button: "left", x: 10, y: 5))
       #   inject_event(RatatuiRuby::Event::Paste.new(content: "Hello"))
       #   inject_event(RatatuiRuby::Event::None.new)  # idle frame
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [event] A <tt>RatatuiRuby::Event</tt> object.
       def inject_event(event)
         unless @_ratatui_test_terminal_active
@@ -111,14 +111,14 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   inject_mouse(x: 10, y: 5, kind: :down, button: :left)
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [x] Integer x-coordinate.
       # [y] Integer y-coordinate.
       # [kind] Symbol <tt>:down</tt>, <tt>:up</tt>, or <tt>:drag</tt>.
@@ -140,7 +140,15 @@ module RatatuiRuby
       #
       # === Example
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   inject_click(x: 10, y: 5)
+      #--
+      # SPDX-SnippetEnd
+      #++
       def inject_click(x:, y:, modifiers: [])
         inject_mouse(x:, y:, kind: :down, modifiers:, button: :left)
       end
@@ -150,7 +158,15 @@ module RatatuiRuby
       #
       # === Example
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   inject_right_click(x: 10, y: 5)
+      #--
+      # SPDX-SnippetEnd
+      #++
       def inject_right_click(x:, y:, modifiers: [])
         inject_mouse(x:, y:, kind: :down, modifiers:, button: :right)
       end
@@ -160,7 +176,15 @@ module RatatuiRuby
       #
       # === Example
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   inject_drag(x: 10, y: 5)
+      #--
+      # SPDX-SnippetEnd
+      #++
       def inject_drag(x:, y:, modifiers: [], button: :left)
         inject_mouse(x:, y:, kind: :drag, modifiers:, button:)
       end
@@ -178,7 +202,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   inject_keys("a", "b", "c")
@@ -226,16 +250,16 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   inject_key("s")           # Triggers async command
       #   inject_sync               # Wait for command to complete
       #   inject_key(:q)            # Quit after seeing results
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       def inject_sync
         inject_event(RatatuiRuby::Event::Sync.new)
       end

@@ -22,20 +22,20 @@ module RatatuiRuby
     # Using predicates:
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   if event.paste?
     #     puts "Pasted: #{event.content}"
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # Using pattern matching:
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   case event
@@ -48,14 +48,22 @@ module RatatuiRuby
     class Paste < Event
       # The pasted content.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   puts event.content # => "https://example.com"
+      #--
+      # SPDX-SnippetEnd
+      #++
       attr_reader :content
 
       # Returns true for Paste events.
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.paste?  # => true
@@ -83,7 +91,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   case event

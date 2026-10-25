@@ -30,7 +30,7 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   # Production: ensure async saves finish before exiting
@@ -41,10 +41,10 @@ module RatatuiRuby
   #     event = RatatuiRuby::SyntheticEvents.pop
   #     handle_sync if event.sync?
   #   end
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   module SyntheticEvents
     @queue = [] #: Array[Event]
     @mutex = Mutex.new

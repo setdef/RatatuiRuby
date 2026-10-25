@@ -12,7 +12,15 @@ module RatatuiRuby
       #
       # === Examples
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   BarChart::Bar.new(value: 10, style: Style.new(fg: :red), label: "A")
+      #--
+      # SPDX-SnippetEnd
+      #++
       class Bar < Data.define(:value, :label, :style, :value_style, :text_value)
         include CoerceableWidget
 

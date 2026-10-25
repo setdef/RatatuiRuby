@@ -21,7 +21,15 @@ module RatatuiRuby
     #
     # Run the interactive demo from the terminal:
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   ruby examples/widget_layout_split/app.rb
+    #--
+    # SPDX-SnippetEnd
+    #++
     class Layout < Data.define(:direction, :constraints, :children, :flex, :margin, :spacing)
       ##
       # :attr_reader: direction
@@ -29,7 +37,15 @@ module RatatuiRuby
       #
       # Either <tt>:vertical</tt> (top to bottom) or <tt>:horizontal</tt> (left to right).
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   layout.direction # => :vertical
+      #--
+      # SPDX-SnippetEnd
+      #++
 
       ##
       # :attr_reader: constraints
@@ -87,7 +103,15 @@ module RatatuiRuby
       # Either a single <tt>Integer</tt> for uniform margin on all sides, or a
       # <tt>Hash</tt> with <tt>:horizontal</tt> and <tt>:vertical</tt> keys.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   layout.margin # => 2
+      #--
+      # SPDX-SnippetEnd
+      #++
 
       ##
       # :attr_reader: spacing
@@ -95,7 +119,15 @@ module RatatuiRuby
       #
       # A positive integer that specifies the number of cells between each segment.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   layout.spacing # => 1
+      #--
+      # SPDX-SnippetEnd
+      #++
 
       # Creates a new Layout.
       #
@@ -122,7 +154,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rects = Layout::Layout.split(
@@ -131,10 +163,10 @@ module RatatuiRuby
       #     constraints: [Layout::Constraint.percentage(50), Layout::Constraint.percentage(50)]
       #   )
       #   left, right = rects
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [area]
       #   The area to split. Can be a <tt>Rect</tt> or a <tt>Hash</tt> containing <tt>:x</tt>, <tt>:y</tt>, <tt>:width</tt>, and <tt>:height</tt>.
       # [direction]
@@ -142,16 +174,8 @@ module RatatuiRuby
       # [constraints]
       #   Array of <tt>Constraint</tt> objects defining section sizes.
       # [flex]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   Flex mode for spacing (default: <tt>:legacy</tt>).
       #
-      #--
-      # SPDX-SnippetEnd
-      #++
       # Returns an Array of <tt>Rect</tt> objects.
       def self.split(area, direction: :vertical, constraints:, flex: :legacy)
         # Coerce area to Rect for type safety (supports duck typing via _RectLike interface)
@@ -197,23 +221,15 @@ module RatatuiRuby
       # [constraints]
       #   Array of <tt>Constraint</tt> objects defining section sizes.
       # [flex]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   Flex mode for spacing (default: <tt>:legacy</tt>).
       #
-      #--
-      # SPDX-SnippetEnd
-      #++
       # Returns an Array of two Arrays: <tt>[segments, spacers]</tt>, each containing <tt>Rect</tt> objects.
       #
       # === Example
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   area = Rect.new(x: 0, y: 0, width: 100, height: 10)

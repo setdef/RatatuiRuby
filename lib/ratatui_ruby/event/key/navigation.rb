@@ -14,7 +14,15 @@ module RatatuiRuby
         #
         # Standard keys include: characters, Enter, Tab, arrow keys, navigation keys.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.standard? # => true for "a", "enter", "up", etc.
+        #--
+        # SPDX-SnippetEnd
+        #++
         def standard?
           @kind == :standard
         end
@@ -23,7 +31,15 @@ module RatatuiRuby
         #
         # Provided for semantic clarity when checking if a key has no special category.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.unmodified? # => true for standard keys like "a", "enter", "up"
+        #--
+        # SPDX-SnippetEnd
+        #++
         alias unmodified? standard?
 
         # Handles navigation-specific DWIM logic for method_missing.

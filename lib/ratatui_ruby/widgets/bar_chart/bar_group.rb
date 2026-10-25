@@ -12,7 +12,15 @@ module RatatuiRuby
       #
       # === Examples
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   BarChart::BarGroup.new(label: "Q1", bars: [BarChart::Bar.new(value: 10), BarChart::Bar.new(value: 20)])
+      #--
+      # SPDX-SnippetEnd
+      #++
       class BarGroup < Data.define(:label, :bars)
         include CoerceableWidget
 

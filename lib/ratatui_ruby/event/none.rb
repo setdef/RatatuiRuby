@@ -25,19 +25,27 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   event = RatatuiRuby.poll_event
     #   break if event.ctrl_c?
     #   redraw if event.none?
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # === Pattern Matching Example
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   redraw if RatatuiRuby.poll_event in type: :none
+    #--
+    # SPDX-SnippetEnd
+    #++
     class None < Event
       # Returns true for None events.
       def none?

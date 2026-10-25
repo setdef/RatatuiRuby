@@ -59,7 +59,7 @@ Add this line to your application's Gemfile:
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -71,7 +71,7 @@ And then execute:
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```bash
@@ -83,7 +83,7 @@ Or install it yourself with:
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```bash
@@ -98,7 +98,7 @@ gem install ratatui_ruby
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 <!-- SYNC:START:examples/verify_readme_usage/app.rb:main -->

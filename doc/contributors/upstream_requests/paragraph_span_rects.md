@@ -33,6 +33,11 @@ Neither approach is satisfactory.
 
 Consider a TUI welcome screen with a clickable link:
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```
 ┌Hello, Rooibos!───────────────────────────────────────┐
 │                                                       │
@@ -46,6 +51,7 @@ Consider a TUI welcome screen with a clickable link:
 │                                                       │
 └───────────────────────────────────────────────────────┘
 ```
+<!-- SPDX-SnippetEnd -->
 
 The link ` www.rooibos.run ` appears on row 5 after word-wrapping. The application wants to:
 
@@ -57,7 +63,7 @@ Without span rects, the application must manually compute where the link renders
 
 <!--
 SPDX-SnippetBegin
-SPDX-FileCopyrightText: 2026 Kerrick Long
+SPDX-SnippetCopyrightText: 2026 Kerrick Long
 SPDX-License-Identifier: MIT-0
 -->
 ```rust
@@ -89,8 +95,8 @@ The computed position is always wrong by several cells.
 
 <!--
 SPDX-SnippetBegin
-SPDX-FileCopyrightText: 2016-2022 Florian Dehau
-SPDX-FileCopyrightText: 2023-2025 The Ratatui Developers
+SPDX-SnippetCopyrightText: 2016-2022 Florian Dehau
+SPDX-SnippetCopyrightText: 2023-2025 The Ratatui Developers
 SPDX-License-Identifier: MIT
 -->
 ```rust
@@ -134,7 +140,7 @@ Following the pattern established by `Block::inner(area)` and `Layout::split()`,
 
 <!--
 SPDX-SnippetBegin
-SPDX-FileCopyrightText: 2026 Kerrick Long
+SPDX-SnippetCopyrightText: 2026 Kerrick Long
 SPDX-License-Identifier: MIT-0
 -->
 ```rust
@@ -171,7 +177,7 @@ SPDX-SnippetEnd
 
 <!--
 SPDX-SnippetBegin
-SPDX-FileCopyrightText: 2026 Kerrick Long
+SPDX-SnippetCopyrightText: 2026 Kerrick Long
 SPDX-License-Identifier: MIT-0
 -->
 ```rust
@@ -186,7 +192,7 @@ SPDX-SnippetEnd
 
 <!--
 SPDX-SnippetBegin
-SPDX-FileCopyrightText: 2026 Kerrick Long
+SPDX-SnippetCopyrightText: 2026 Kerrick Long
 SPDX-License-Identifier: MIT-0
 -->
 ```rust
@@ -219,7 +225,7 @@ Without this API, users must reimplement word wrapping. This is impractical for 
 
 <!--
 SPDX-SnippetBegin
-SPDX-FileCopyrightText: 2026 Kerrick Long
+SPDX-SnippetCopyrightText: 2026 Kerrick Long
 SPDX-License-Identifier: MIT-0
 -->
 ```rust

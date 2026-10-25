@@ -19,7 +19,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   Layout::Constraint.length(5)      # Exactly 5 cells
@@ -44,14 +44,14 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Layout::Constraint.length(10) # 10 characters wide/high
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [v] Number of cells (Integer).
       def self.length(v)
         new(type: :length, value: Integer(v))
@@ -61,14 +61,14 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Layout::Constraint.percentage(25) # 25% of the area
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [v] Percentage 0-100 (Integer).
       def self.percentage(v)
         new(type: :percentage, value: Integer(v))
@@ -78,14 +78,14 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Layout::Constraint.min(5) # At least 5 cells
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # This section will grow if space permits, but never shrink below +v+.
       #
       # [v] Minimum cells (Integer).
@@ -97,14 +97,14 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Layout::Constraint.max(10) # At most 10 cells
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [v] Maximum cells (Integer).
       def self.max(v)
         new(type: :max, value: Integer(v))
@@ -114,15 +114,15 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Layout::Constraint.fill(1) # Equal share
       #   Layout::Constraint.fill(2) # Double share
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Fill constraints distribute any space left after satisfying strict rules.
       # They behave like flex-grow. A fill(2) takes twice as much space as a fill(1).
       #
@@ -135,14 +135,14 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Layout::Constraint.ratio(1, 3) # 1/3rd of the area
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [numerator] Top part of fraction (Integer).
       # [denominator] Bottom part of fraction (Integer).
       def self.ratio(numerator, denominator)
@@ -160,15 +160,15 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Constraint.from_lengths([10, 20, 10])
       #   # => [Constraint.length(10), Constraint.length(20), Constraint.length(10)]
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [values] Enumerable of Integers.
       def self.from_lengths(values)
         values.map { |v| length(v) }
@@ -182,15 +182,15 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Constraint.from_percentages([25, 50, 25])
       #   # => [Constraint.percentage(25), Constraint.percentage(50), Constraint.percentage(25)]
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [values] Enumerable of Integers (0-100).
       def self.from_percentages(values)
         values.map { |v| percentage(v) }
@@ -204,15 +204,15 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Constraint.from_mins([5, 10, 5])
       #   # => [Constraint.min(5), Constraint.min(10), Constraint.min(5)]
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [values] Enumerable of Integers.
       def self.from_mins(values)
         values.map { |v| min(v) }
@@ -226,15 +226,15 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Constraint.from_maxes([20, 30, 40])
       #   # => [Constraint.max(20), Constraint.max(30), Constraint.max(40)]
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [values] Enumerable of Integers.
       def self.from_maxes(values)
         values.map { |v| max(v) }
@@ -248,15 +248,15 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Constraint.from_fills([1, 2, 1])
       #   # => [Constraint.fill(1), Constraint.fill(2), Constraint.fill(1)]
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [values] Enumerable of Integers.
       def self.from_fills(values)
         values.map { |v| fill(v) }
@@ -270,15 +270,15 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Constraint.from_ratios([[1, 4], [2, 4], [1, 4]])
       #   # => [Constraint.ratio(1, 4), Constraint.ratio(2, 4), Constraint.ratio(1, 4)]
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [pairs] Enumerable of <tt>[numerator, denominator]</tt> arrays.
       def self.from_ratios(pairs)
         pairs.map { |n, d| ratio(n, d) }
@@ -293,7 +293,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Constraint.percentage(50).apply(100) # => 50

@@ -31,7 +31,7 @@ For a complete list of supported keys, modifiers, and event types, please refer 
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -61,7 +61,7 @@ Available: `key?`, `mouse?`, `resize?`, `paste?`, `focus_gained?`, `focus_lost?`
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -87,7 +87,7 @@ Specific to certain event classes to simplify checks.
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -103,7 +103,7 @@ end
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -119,7 +119,7 @@ For complex applications, Ruby 3.0+ Pattern Matching with the `type:` discrimina
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby

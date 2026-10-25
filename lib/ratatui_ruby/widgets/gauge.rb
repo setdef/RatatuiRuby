@@ -21,7 +21,15 @@ module RatatuiRuby
     #
     # Run the interactive demo from the terminal:
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   ruby examples/widget_gauge/app.rb
+    #--
+    # SPDX-SnippetEnd
+    #++
     class Gauge < Data.define(:ratio, :label, :style, :gauge_style, :block, :use_unicode)
       include CoerceableWidget
 
@@ -85,7 +93,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Widgets::Gauge.new(ratio: 0.0).filled?  # => false
@@ -103,7 +111,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Widgets::Gauge.new(ratio: 0.99).complete?  # => false
@@ -127,7 +135,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   gauge = Widgets::Gauge.new(percent: 75)

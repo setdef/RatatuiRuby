@@ -23,7 +23,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   ruby examples/widget_barchart/app.rb
@@ -56,44 +56,36 @@ module RatatuiRuby
       # [<tt>Array</tt> of tuples]
       #   Ordered list of <tt>["Label", Value]</tt> or <tt>["Label", Value, Style]</tt> pairs.
       # [<tt>Array</tt> of <tt>BarChart::BarGroup</tt>]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   List of <tt>BarChart::BarGroup</tt> objects for grouped charts.
       #
-      #--
-      # SPDX-SnippetEnd
-      #++
       # === Examples
       #
       # Hash (Simple):
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   { "Apples" => 10, :Oranges => 15 }
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Array of Tuples (Ordered):
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   [["Mon", 20], ["Tue", 30], ["Wed", 25]]
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # BarGroup (Grouped):
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   [
@@ -155,7 +147,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   bar_set: {
@@ -206,16 +198,8 @@ module RatatuiRuby
       # [value_style]
       #   Style object for values (optional).
       # [bar_set]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   Symbol, Hash, or Array: Custom characters for bars.
       #   Symbols: <tt>:nine_levels</tt> (default gradient), <tt>:three_levels</tt> (simplified).
-      #--
-      # SPDX-SnippetEnd
-      #++
       def initialize(data:, bar_width: 3, bar_gap: 1, group_gap: 0, max: nil, style: nil, block: nil, direction: :vertical, label_style: nil, value_style: nil, bar_set: nil)
         # Normalize bar_set to Hash[Symbol, String] if provided as Array or Hash
         bar_set = case bar_set

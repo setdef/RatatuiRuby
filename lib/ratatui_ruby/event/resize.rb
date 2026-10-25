@@ -23,20 +23,20 @@ module RatatuiRuby
     # Using predicates:
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   if event.resize?
     #     puts "Resized to #{event.width}x#{event.height}"
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # Using pattern matching:
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   case event
@@ -49,19 +49,35 @@ module RatatuiRuby
     class Resize < Event
       # New terminal width in columns.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   puts event.width # => 80
+      #--
+      # SPDX-SnippetEnd
+      #++
       attr_reader :width
 
       # New terminal height in rows.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   puts event.height # => 24
+      #--
+      # SPDX-SnippetEnd
+      #++
       attr_reader :height
 
       # Returns true for Resize events.
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.resize? # => true
@@ -89,7 +105,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   case event
@@ -112,7 +128,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event = Event::Resize.new(width: 80, height: 24)
@@ -135,7 +151,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   if event == :resize
@@ -154,7 +170,15 @@ module RatatuiRuby
 
       # Returns true. Unix <tt>SIGWINCH</tt> triggers terminal resize.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.sigwinch? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def sigwinch?
         true
       end
@@ -175,42 +199,90 @@ module RatatuiRuby
 
       # Returns true if width exceeds height.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Event::Resize.new(width: 120, height: 24).landscape? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def landscape?
         @width > @height
       end
 
       # Returns true if height exceeds or equals width.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Event::Resize.new(width: 40, height: 80).portrait? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def portrait?
         @height >= @width
       end
 
       # Returns true if dimensions are exactly 80x24.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Event::Resize.new(width: 80, height: 24).vt100? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def vt100?
         @width == VT100_WIDTH && @height == VT100_HEIGHT
       end
 
       # Returns true if both dimensions meet or exceed 80x24.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Event::Resize.new(width: 120, height: 40).at_least_vt100? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def at_least_vt100?
         @width >= VT100_WIDTH && @height >= VT100_HEIGHT
       end
 
       # Returns true if both dimensions exceed 80x24.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Event::Resize.new(width: 81, height: 25).over_vt100? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def over_vt100?
         @width > VT100_WIDTH && @height > VT100_HEIGHT
       end
 
       # Returns true if either dimension falls below VT100 standard.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Event::Resize.new(width: 60, height: 24).cramped? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def cramped?
         @width < VT100_WIDTH || @height < VT100_HEIGHT
       end

@@ -20,7 +20,7 @@ First, require the test helper in your test file or `test_helper.rb`:
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -33,7 +33,7 @@ Then, include the module in your test class:
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2025 Kerrick Long
+  SPDX-SnippetCopyrightText: 2025 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -54,7 +54,7 @@ To test a view or widget, wrap your assertions in `with_test_terminal`. This set
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -86,7 +86,7 @@ Use `assert_fg_color`, `assert_bg_color`, and modifier helpers like `assert_bold
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -112,7 +112,7 @@ Use `inject_event` to push mock events into the queue. This ensures safe, determ
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -135,7 +135,7 @@ Inject `Event::None` to simulate idle frames at deterministic positions in the e
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -158,7 +158,7 @@ Use `assert_snapshots` to compare the current screen against stored reference fi
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby
@@ -189,7 +189,7 @@ Use `MockFrame` and `StubRect` to test render logic in isolation.
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 ```ruby

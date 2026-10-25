@@ -27,12 +27,18 @@ Consider a TUI with a tabbed interface where the block's title bar contains:
 - A left-aligned title: `"Announce v0.7.3"`  
 - A right-aligned toggle: `"emate"` (clickable to switch email clients)
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```
 ┌Announce v0.7.3───────────────────────────────emate┐
 │ Preview Email  ▸  Preview Commit  ▸  Announce   │
 │                                                   │
 └───────────────────────────────────────────────────┘
 ```
+<!-- SPDX-SnippetEnd -->
 
 The application wants to:
 
@@ -46,6 +52,11 @@ Without title rects, the application must manually compute where `"emate"` rende
 
 `Block` has private methods that compute title areas:
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```rust
 // Private - not accessible to users
 fn titles_area(&self, area: Rect, position: Position) -> Rect { ... }
@@ -53,6 +64,7 @@ fn render_left_titles(&self, position: Position, area: Rect, buf: &mut Buffer) {
 fn render_center_titles(&self, position: Position, area: Rect, buf: &mut Buffer) { ... }
 fn render_right_titles(&self, position: Position, area: Rect, buf: &mut Buffer) { ... }
 ```
+<!-- SPDX-SnippetEnd -->
 
 The `titles_area` method computes the general title region. The `render_*_titles` methods compute individual title rects during rendering but do not expose them.
 
@@ -60,6 +72,11 @@ The `titles_area` method computes the general title region. The `render_*_titles
 
 Following the pattern established by `Block::inner(area)`, add a pure computation method that takes an area and returns computed sub-rects without rendering:
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```rust
 impl Block {
     /// Returns the bounding rect for each title given an area.
@@ -82,9 +99,15 @@ impl Block {
     pub fn title_rects(&self, area: Rect) -> Vec<Rect> { ... }
 }
 ```
+<!-- SPDX-SnippetEnd -->
 
 Alternatively, expose the individual areas by alignment:
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```rust
 /// Returns the rect for the title at the given index.
 pub fn title_rect(&self, area: Rect, index: usize) -> Option<Rect> { ... }
@@ -92,11 +115,17 @@ pub fn title_rect(&self, area: Rect, index: usize) -> Option<Rect> { ... }
 /// Returns the titles area for a given position (top or bottom).
 pub fn titles_area(&self, area: Rect, position: Position) -> Rect { ... }
 ```
+<!-- SPDX-SnippetEnd -->
 
 ## Workaround
 
 Without this API, users must replicate the title layout algorithm. Here is the current approach used in RatatuiRuby:
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```rust
 // Manually compute right-aligned title position
 let email_label_width = email_client.len() as u16;
@@ -107,6 +136,7 @@ if email_label_rect.contains(click_position) {
     toggle_email_client();
 }
 ```
+<!-- SPDX-SnippetEnd -->
 
 This works for simple cases but breaks when:
 

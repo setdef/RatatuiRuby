@@ -30,43 +30,43 @@ module RatatuiRuby
     # Using predicates:
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   if event.key? && event.ctrl? && event.code == "c"
     #     exit
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # Using symbol comparison:
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   if event == :ctrl_c
     #     exit
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # Using pattern matching:
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   case event
     #   in type: :key, code: "c", modifiers: ["ctrl"]
     #     exit
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # === Terminal Compatibility
     #
     # Some key combinations never reach your application. Terminal emulators intercept them for
@@ -97,12 +97,28 @@ module RatatuiRuby
 
       # The key code (e.g., <tt>"a"</tt>, <tt>"enter"</tt>, <tt>"up"</tt>).
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   puts event.code # => "enter"
+      #--
+      # SPDX-SnippetEnd
+      #++
       attr_reader :code
 
       # List of active modifiers (<tt>"ctrl"</tt>, <tt>"alt"</tt>, <tt>"shift"</tt>).
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   puts event.modifiers # => ["ctrl", "shift"]
+      #--
+      # SPDX-SnippetEnd
+      #++
       attr_reader :modifiers
 
       # The category of the key.
@@ -111,14 +127,22 @@ module RatatuiRuby
       #
       # This allows grouping keys by their logical type without parsing the code string.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.kind # => :media
+      #--
+      # SPDX-SnippetEnd
+      #++
       attr_reader :kind
 
       # Returns true for Key events.
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.key?    # => true
@@ -138,16 +162,8 @@ module RatatuiRuby
       # [modifiers]
       #   List of modifiers (Array<String>).
       # [kind]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   The key category (Symbol). One of: <tt>:standard</tt>, <tt>:function</tt>,
       #   <tt>:media</tt>, <tt>:modifier</tt>, <tt>:system</tt>. Defaults to <tt>:standard</tt>.
-      #--
-      # SPDX-SnippetEnd
-      #++
       def initialize(code:, modifiers: [], kind: :standard)
         @code = code.freeze
         @modifiers = modifiers.map(&:freeze).sort.freeze
@@ -183,16 +199,8 @@ module RatatuiRuby
       # [Standard]
       #   <tt>:enter</tt>, <tt>:backspace</tt>, <tt>:tab</tt>, <tt>:back_tab</tt>, <tt>:esc</tt>, <tt>:null</tt>
       # [Navigation]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   <tt>:up</tt>, <tt>:down</tt>, <tt>:left</tt>, <tt>:right</tt>, <tt>:home</tt>, <tt>:end</tt>,
       #   <tt>:page_up</tt>, <tt>:page_down</tt>, <tt>:insert</tt>, <tt>:delete</tt>
-      #--
-      # SPDX-SnippetEnd
-      #++
       # [Function Keys]
       #   <tt>:f1</tt> through <tt>:f12</tt> (and beyond, e.g. <tt>:f24</tt>)
       # [Lock Keys]
@@ -200,41 +208,17 @@ module RatatuiRuby
       # [System Keys]
       #   <tt>:print_screen</tt>, <tt>:pause</tt>, <tt>:menu</tt>, <tt>:keypad_begin</tt>
       # [Media Keys]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   <tt>:play</tt>, <tt>:media_pause</tt>, <tt>:play_pause</tt>, <tt>:reverse</tt>, <tt>:stop</tt>,
       #   <tt>:fast_forward</tt>, <tt>:rewind</tt>, <tt>:track_next</tt>, <tt>:track_previous</tt>,
       #   <tt>:record</tt>, <tt>:lower_volume</tt>, <tt>:raise_volume</tt>, <tt>:mute_volume</tt>
-      #--
-      # SPDX-SnippetEnd
-      #++
       # [Modifier Keys]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   <tt>:left_shift</tt>, <tt>:left_control</tt>, <tt>:left_alt</tt>, <tt>:left_super</tt>,
       #   <tt>:left_hyper</tt>, <tt>:left_meta</tt>, <tt>:right_shift</tt>, <tt>:right_control</tt>,
       #   <tt>:right_alt</tt>, <tt>:right_super</tt>, <tt>:right_hyper</tt>, <tt>:right_meta</tt>,
       #   <tt>:iso_level3_shift</tt>, <tt>:iso_level5_shift</tt>
-      #--
-      # SPDX-SnippetEnd
-      #++
       # [Characters]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   <tt>:a</tt>, <tt>:b</tt>, <tt>:1</tt>, <tt>:space</tt>, etc.
       #
-      #--
-      # SPDX-SnippetEnd
-      #++
       # === Modifier Examples
       #
       # * <tt>:ctrl_c</tt>
@@ -257,16 +241,8 @@ module RatatuiRuby
       # [Special Keys]
       #   Returns an empty string (e.g., <tt>"enter"</tt>, <tt>"up"</tt>, <tt>"f1"</tt> all return <tt>""</tt>).
       # [Modifiers]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   Returns the character if printable, ignoring modifiers unless they alter the character code itself.
       #   Note that <tt>ctrl+c</tt> typically returns <tt>"c"</tt> as the code, so +to_s+ will return <tt>"c"</tt>.
-      #--
-      # SPDX-SnippetEnd
-      #++
       def to_s
         if text?
           @code
@@ -286,17 +262,17 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.ctrl_c?     # => true if Ctrl+C
       #   event.enter?      # => true if Enter
       #   event.shift_up?   # => true if Shift+Up
       #   event.q?          # => true if "q"
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # The method name is converted to a symbol and compared against the event.
       # This works for any key code or modifier+key combination.
       #
@@ -306,16 +282,16 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.pause?      # => true for BOTH system "pause" AND "media_pause"
       #   event.play?       # => true for "media_play"
       #   event.stop?       # => true for "media_stop"
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # This "Do What I Mean" behavior reduces boilerplate when you just want to
       # respond to a conceptual action (e.g., "pause the playback") regardless of
       # whether the user pressed a keyboard key or a media button.
@@ -324,15 +300,15 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.media_pause?  # => true ONLY for media pause
       #   event.code == "pause"  # => true ONLY for system pause
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # === Arrow Key Aliases
       #
       # Arrow keys respond to <tt>arrow_up?</tt> and <tt>up_arrow?</tt> variants.
@@ -341,16 +317,16 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.arrow_up?     # => true for up arrow key
       #   event.up_arrow?     # => true for up arrow key
       #   event.arrow_down?   # => true for down arrow key
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # === Key Prefix and Suffix
       #
       # Predicates accept <tt>key_</tt> prefix or <tt>_key</tt> suffix for explicit
@@ -358,17 +334,17 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.key_up?       # => true for up arrow key
       #   event.key_q?        # => true for "q" key
       #   event.q_key?        # => true for "q" key
       #   event.enter_key?    # => true for enter key
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # === Capital Letters and Shift
       #
       # Capital letter predicates match shifted keys naturally. The terminal reports
@@ -376,16 +352,16 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.G?            # => true for code="G" modifiers=["shift"]
       #   event.shift_g?      # => true for code="G" modifiers=["shift"]
       #   event.alt_B?        # => true for code="B" modifiers=["alt", "shift"]
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       def method_missing(name, *args, **kwargs, &block)
         if name.to_s.end_with?("?")
           name_str = name.to_s
@@ -459,7 +435,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   case event

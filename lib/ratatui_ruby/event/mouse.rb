@@ -22,7 +22,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   if event.mouse? && event.down? && event.button == "left"
@@ -34,40 +34,72 @@ module RatatuiRuby
     class Mouse < Event
       # The kind of event (<tt>"down"</tt>, <tt>"up"</tt>, <tt>"drag"</tt>, <tt>"moved"</tt>, <tt>"scroll_up"</tt>, <tt>"scroll_down"</tt>).
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   puts event.kind # => "down"
+      #--
+      # SPDX-SnippetEnd
+      #++
       attr_reader :kind
       # X coordinate (column).
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   puts event.x # => 10
+      #--
+      # SPDX-SnippetEnd
+      #++
       attr_reader :x
       # Y coordinate (row).
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   puts event.y # => 5
+      #--
+      # SPDX-SnippetEnd
+      #++
       attr_reader :y
       # The button pressed (<tt>"left"</tt>, <tt>"right"</tt>, <tt>"middle"</tt>, <tt>"none"</tt>).
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   puts event.button # => "left"
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Can be <tt>nil</tt>, which is treated as <tt>"none"</tt>.
       attr_reader :button
       # List of active modifiers.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   puts event.modifiers # => ["ctrl"]
+      #--
+      # SPDX-SnippetEnd
+      #++
       attr_reader :modifiers
 
       # Returns true for Mouse events.
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.mouse?  # => true
@@ -127,7 +159,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   if event.scroll_down?
@@ -163,7 +195,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   case event
@@ -191,21 +223,13 @@ module RatatuiRuby
       # [Scroll]
       #   <tt>:scroll_up</tt>, <tt>:scroll_down</tt>
       # [Move]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   <tt>:mouse_moved</tt>
       #
-      #--
-      # SPDX-SnippetEnd
-      #++
       # === Example
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event = Event::Mouse.new(kind: "down", x: 10, y: 5, button: "left")
@@ -237,7 +261,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   if event == :mouse_left_down
@@ -259,7 +283,15 @@ module RatatuiRuby
 
       # Returns true for any scroll event.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.scroll? # => true for scroll_up or scroll_down
+      #--
+      # SPDX-SnippetEnd
+      #++
       def scroll?
         scroll_up? || scroll_down?
       end
@@ -272,7 +304,15 @@ module RatatuiRuby
 
       # Returns true for mouse movement without button press.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.moved? # => true for moved (no button)
+      #--
+      # SPDX-SnippetEnd
+      #++
       def moved?
         @kind == "moved"
       end

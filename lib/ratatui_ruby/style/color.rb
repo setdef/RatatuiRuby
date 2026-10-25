@@ -22,7 +22,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   # From a hex integer (common in design tools)
@@ -49,7 +49,7 @@ module RatatuiRuby
         #
         #--
         # SPDX-SnippetBegin
-        # SPDX-FileCopyrightText: 2026 Kerrick Long
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long
         # SPDX-License-Identifier: MIT-0
         #++
         #   Color.from_u32(0xFF0000) # => "#ff0000" (red)
@@ -82,7 +82,7 @@ module RatatuiRuby
         #
         #--
         # SPDX-SnippetBegin
-        # SPDX-FileCopyrightText: 2026 Kerrick Long
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long
         # SPDX-License-Identifier: MIT-0
         #++
         #   Color.from_hsl(0, 100, 50)   # => "#ff0000" (red)
@@ -123,7 +123,7 @@ module RatatuiRuby
         #
         #--
         # SPDX-SnippetBegin
-        # SPDX-FileCopyrightText: 2026 Kerrick Long
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long
         # SPDX-License-Identifier: MIT-0
         #++
         #   Color.from_hsluv(12.18, 100, 53.2)   # => "#ff0000" (bright red)

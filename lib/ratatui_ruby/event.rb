@@ -28,7 +28,7 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2025 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2025 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   case RatatuiRuby.poll_event
@@ -51,17 +51,17 @@ module RatatuiRuby
   #   in { type: :none }
   #     # Idle
   #   end
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   # == Predicates
   #
   # Check event types with predicates without pattern matching:
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2025 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2025 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   event = RatatuiRuby.poll_event
@@ -137,7 +137,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   case event

@@ -26,7 +26,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   def log(message)
@@ -129,17 +129,17 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   RatatuiRuby.run(focus_events: false) do |tui|
     #     tui.draw(tui.paragraph(text: "Hi"))
     #     sleep 1
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # Raises Error::Invariant if headless mode is enabled.
     # See also OutputGuard#headless!.
     def run(focus_events: true, bracketed_paste: true, viewport: nil, height: nil)
@@ -201,7 +201,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   RatatuiRuby.run(viewport: :inline, height: 3) do |tui|
@@ -253,7 +253,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   # With Position object
@@ -285,7 +285,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   pos = RatatuiRuby.cursor_position

@@ -21,7 +21,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   area = Layout::Rect.new(x: 0, y: 0, width: 80, height: 24)
@@ -69,29 +69,21 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   area = Layout::Rect.new(x: 10, y: 5, width: 20, height: 10)
       #   area.contains?(15, 8) # => true
       #   area.contains?(5, 8)  # => false
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [px]
       #   X coordinate to test (column).
       # [py]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   Y coordinate to test (row).
       #
-      #--
-      # SPDX-SnippetEnd
-      #++
       # Returns true if the point (px, py) is within the rectangle bounds.
       def contains?(px, py)
         px >= x && px < x + width && py >= y && py < y + height
@@ -103,27 +95,19 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   viewport = Layout::Rect.new(x: 0, y: 0, width: 80, height: 24)
       #   widget = Layout::Rect.new(x: 70, y: 20, width: 20, height: 10)
       #   viewport.intersects?(widget) # => true (partial overlap)
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [other]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   Another Rect to test against.
       #
-      #--
-      # SPDX-SnippetEnd
-      #++
       # Returns true if the rectangles overlap.
       def intersects?(other)
         x < other.x + other.width &&
@@ -138,28 +122,20 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   viewport = Layout::Rect.new(x: 0, y: 0, width: 80, height: 24)
       #   widget = Layout::Rect.new(x: 70, y: 20, width: 20, height: 10)
       #   visible = viewport.intersection(widget)
       #   # => Rect(x: 70, y: 20, width: 10, height: 4)
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [other]
-      #--
-      # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
-      # SPDX-License-Identifier: MIT-0
-      #++
       #   Another Rect to intersect with.
       #
-      #--
-      # SPDX-SnippetEnd
-      #++
       # Returns a new Rect representing the intersection, or +nil+ if no overlap.
       def intersection(other)
         return nil unless intersects?(other)
@@ -183,7 +159,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 10, y: 5, width: 80, height: 24)
@@ -206,7 +182,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 10, y: 5, width: 80, height: 24)
@@ -229,7 +205,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 10, y: 5, width: 80, height: 24)
@@ -252,7 +228,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 10, y: 5, width: 80, height: 24)
@@ -275,7 +251,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 0, y: 0, width: 10, height: 5)
@@ -298,7 +274,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Layout::Rect.new(width: 0, height: 10).empty? # => true
@@ -323,7 +299,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   r1 = Layout::Rect.new(x: 0, y: 0, width: 10, height: 10)
@@ -359,7 +335,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 0, y: 0, width: 20, height: 10)
@@ -393,7 +369,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 10, y: 10, width: 20, height: 10)
@@ -424,7 +400,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 10, y: 5, width: 20, height: 10)
@@ -449,7 +425,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 10, y: 5, width: 20, height: 10)
@@ -475,7 +451,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   screen = Layout::Rect.new(x: 0, y: 0, width: 100, height: 100)
@@ -503,7 +479,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 0, y: 0, width: 5, height: 3)
@@ -529,7 +505,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 0, y: 0, width: 5, height: 3)
@@ -556,7 +532,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 0, y: 0, width: 2, height: 2)
@@ -585,7 +561,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 10, y: 5, width: 80, height: 24)
@@ -608,7 +584,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 10, y: 5, width: 80, height: 24)
@@ -633,7 +609,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 0, y: 0, width: 100, height: 24)
@@ -660,7 +636,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 0, y: 0, width: 80, height: 100)
@@ -688,7 +664,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   rect = Layout::Rect.new(x: 0, y: 0, width: 100, height: 100)
@@ -712,7 +688,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   area = tui.viewport_area

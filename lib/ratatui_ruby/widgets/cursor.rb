@@ -19,14 +19,14 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   Cursor.new(x: 10, y: 5)
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # See also:
     # - {Declarative implementation using Tree API}[link:/examples/app_login_form/app_rb.html]
     # - {Component-based implementation using Frame API}[link:/examples/app_color_picker/app_rb.html]

@@ -70,22 +70,22 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   RatatuiRuby.restore_terminal
     #   puts "Press enter to continue..."
     #   gets
     #   RatatuiRuby.init_terminal
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # === Example
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   if ARGV.include?("--no-tui")
@@ -96,10 +96,10 @@ module RatatuiRuby
     #       # ... TUI code ...
     #     end
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # Note: Calling TerminalLifecycle#run or TerminalLifecycle#init_terminal after #headless! raises
     # Error::Invariant. The block is never executed.
     #
@@ -132,7 +132,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   RatatuiRuby.run do |tui|
@@ -140,10 +140,10 @@ module RatatuiRuby
     #       SomeChattyGem.do_something  # Any puts/warn calls are swallowed
     #     end
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # See also #headless!.
     def guard_io
       # TUI active: guard the output

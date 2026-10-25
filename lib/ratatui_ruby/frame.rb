@@ -32,22 +32,22 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   RatatuiRuby.draw do |frame|
   #     paragraph = RatatuiRuby::Widgets::Paragraph.new(text: "Hello, world!")
   #     frame.render_widget(paragraph, frame.area)
   #   end
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   # Using Layout.split for multi-region layouts:
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   RatatuiRuby.draw do |frame|
@@ -83,16 +83,16 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   RatatuiRuby.draw do |frame|
     #     puts "Terminal size: #{frame.area.width}x#{frame.area.height}"
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # (Native method implemented in Rust)
 
     ##
@@ -107,31 +107,23 @@ module RatatuiRuby
     # [widget]
     #   The widget to render (Paragraph, Layout, List, Table, etc.).
     # [area]
-    #--
-    # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
-    # SPDX-License-Identifier: MIT-0
-    #++
     #   A Rect specifying where to render the widget.
     #
-    #--
-    # SPDX-SnippetEnd
-    #++
     # === Example
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   RatatuiRuby.draw do |frame|
     #     para = RatatuiRuby::Widgets::Paragraph.new(text: "Content")
     #     frame.render_widget(para, frame.area)
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # (Native method implemented in Rust)
 
     ##
@@ -156,21 +148,13 @@ module RatatuiRuby
     # [area]
     #   The Rect area to render into.
     # [state]
-    #--
-    # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
-    # SPDX-License-Identifier: MIT-0
-    #++
     #   The mutable state object (Output) (e.g., RatatuiRuby::ListState).
     #
-    #--
-    # SPDX-SnippetEnd
-    #++
     # === Example
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   # Initialize state once (outside the loop)
@@ -183,10 +167,10 @@ module RatatuiRuby
     #
     #   # Read back the offset calculated by Ratatui
     #   puts @list_state.offset
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # (Native method implemented in Rust)
 
     ##
@@ -207,23 +191,15 @@ module RatatuiRuby
     # [x]
     #   Column position (<tt>0</tt> = leftmost column).
     # [y]
-    #--
-    # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
-    # SPDX-License-Identifier: MIT-0
-    #++
     #   Row position (<tt>0</tt> = topmost row).
     #
-    #--
-    # SPDX-SnippetEnd
-    #++
     # === Example
     #
     # Position the cursor at the end of typed text in a login form:
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   PREFIX = "Username: [ "
@@ -243,10 +219,10 @@ module RatatuiRuby
     #     cursor_y = 1  # First line inside border
     #     frame.set_cursor_position(cursor_x, cursor_y)
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # See also:
     # - {Component-based implementation using Frame API}[link:/examples/app_color_picker/app_rb.html]
     # - {Declarative implementation using Tree API}[link:/examples/app_login_form/app_rb.html]

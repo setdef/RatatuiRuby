@@ -22,7 +22,15 @@ module RatatuiRuby
     #
     # Run the interactive demo from the terminal:
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   ruby examples/widget_table/app.rb
+    #--
+    # SPDX-SnippetEnd
+    #++
     class Table < Data.define(:header, :rows, :widths, :row_highlight_style, :highlight_symbol, :highlight_spacing, :column_highlight_style, :cell_highlight_style, :selected_row, :selected_column, :offset, :block, :footer, :flex, :style, :column_spacing)
       include CoerceableWidget
 

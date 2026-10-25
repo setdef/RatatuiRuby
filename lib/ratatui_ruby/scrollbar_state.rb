@@ -16,7 +16,7 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   @scrollbar_state = RatatuiRuby::ScrollbarState.new(100)
@@ -26,10 +26,10 @@ module RatatuiRuby
   #     scrollbar = RatatuiRuby::Scrollbar.new(orientation: :vertical_right)
   #     frame.render_stateful_widget(scrollbar, frame.area, @scrollbar_state)
   #   end
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   class ScrollbarState
     ##
     # :method: new

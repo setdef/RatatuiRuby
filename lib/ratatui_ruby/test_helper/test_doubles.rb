@@ -23,7 +23,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   frame = MockFrame.new
@@ -45,7 +45,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   frame = MockFrame.new
@@ -75,7 +75,15 @@ module RatatuiRuby
       #
       # === Example
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   area = StubRect.new(width: 60, height: 20)
+      #--
+      # SPDX-SnippetEnd
+      #++
       StubRect = Data.define(:x, :y, :width, :height) do
         def initialize(x: 0, y: 0, width: 80, height: 24)
           super

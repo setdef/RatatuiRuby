@@ -21,7 +21,15 @@ module RatatuiRuby
     #
     # Run the interactive demo from the terminal:
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   ruby examples/widget_line_gauge/app.rb
+    #--
+    # SPDX-SnippetEnd
+    #++
     class LineGauge < Data.define(:ratio, :label, :style, :filled_style, :unfilled_style, :block, :filled_symbol, :unfilled_symbol)
       include CoerceableWidget
 
@@ -97,7 +105,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Widgets::LineGauge.new(ratio: 0.0).filled?  # => false
@@ -115,7 +123,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   Widgets::LineGauge.new(ratio: 0.99).complete?  # => false
@@ -139,7 +147,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   lg = Widgets::LineGauge.new(percent: 75)

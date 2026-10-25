@@ -28,30 +28,30 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   test/examples/my_app/test_app.rb
     #   test/examples/my_app/snapshots/initial_render.txt
     #   test/examples/my_app/snapshots/initial_render.ansi
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # === Creating and Updating Snapshots
     #
     # Run tests with <tt>UPDATE_SNAPSHOTS=1</tt> to create or refresh snapshots:
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   UPDATE_SNAPSHOTS=1 bundle exec rake test
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # === Seeding Random Data
     #
     # Random data (scatter plots, generated content) breaks snapshot stability.
@@ -59,7 +59,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   class MyApp
@@ -76,10 +76,10 @@ module RatatuiRuby
     #   def setup
     #     @app = MyApp.new(seed: 42)
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # For libraries like Faker, see their docs on deterministic random:
     # https://github.com/faker-ruby/faker#deterministic-random
     #
@@ -89,16 +89,16 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   assert_snapshots("dashboard") do |lines|
     #     lines.map { |l| l.gsub(/\d{4}-\d{2}-\d{2}/, "YYYY-MM-DD") }
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     #
     # === Class-Wide Normalization
     #
@@ -126,7 +126,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   class TestFileExplorer < Minitest::Test
@@ -148,10 +148,10 @@ module RatatuiRuby
       #       end
       #     end
       #   end
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       private def normalize_snapshots(lines)
         lines
       end
@@ -167,7 +167,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   assert_plain_snapshot("login_screen")
@@ -177,10 +177,10 @@ module RatatuiRuby
       #   assert_plain_snapshot("clock") do |actual|
       #     actual.map { |l| l.gsub(/\d{2}:\d{2}/, "XX:XX") }
       #   end
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [name] String name of the snapshot (without extension).
       # [msg] String optional failure message.
       def assert_plain_snapshot(name, msg = nil, snapshot_dir: nil, &)
@@ -207,7 +207,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   # Direct comparison
@@ -220,10 +220,10 @@ module RatatuiRuby
       #   assert_screen_matches("test/snapshots/dashboard.txt") do |lines|
       #     lines.map { |l| l.gsub(/User ID: \d+/, "User ID: XXX") }
       #   end
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [expected] String (file path) or Array<String> (content).
       # [msg] String optional failure message.
       #
@@ -299,7 +299,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   assert_rich_snapshot("login_screen")
@@ -309,10 +309,10 @@ module RatatuiRuby
       #   assert_rich_snapshot("log_view") do |lines|
       #     lines.map { |l| l.gsub(/\d{2}:\d{2}:\d{2}/, "HH:MM:SS") }
       #   end
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [name] String snapshot name.
       # [msg] String optional failure message.
       def assert_rich_snapshot(name, msg = nil, snapshot_dir: nil)
@@ -376,7 +376,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   assert_snapshots("login_screen")
@@ -386,10 +386,10 @@ module RatatuiRuby
       #   assert_snapshots("dashboard") do |lines|
       #     lines.map { |l| l.gsub(/\d{2}:\d{2}:\d{2}/, "HH:MM:SS") }
       #   end
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # [name] String snapshot name (without extension).
       # [msg] String optional failure message.
       def assert_snapshots(name, msg = nil, &)
@@ -411,7 +411,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   with_test_terminal(80, 25) do
@@ -422,10 +422,10 @@ module RatatuiRuby
       #     ansi_output = render_rich_buffer
       #     puts ansi_output  # Shows styled output with escape codes
       #   end
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       def render_rich_buffer
         _render_buffer_with_ansi
       end

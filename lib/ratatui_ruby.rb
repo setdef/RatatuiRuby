@@ -70,7 +70,7 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   begin
@@ -96,7 +96,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   begin
@@ -124,7 +124,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   stored_frame = nil
@@ -151,7 +151,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   RatatuiRuby.init_terminal
@@ -212,14 +212,14 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2025 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2025 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   inject_test_event("key", { code: "a" })
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   # (Native method implemented in Rust)
 
   ##
@@ -255,14 +255,14 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   RatatuiRuby.debug_mode!
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   def self.debug_mode!
     Debug.enable!
   end
@@ -279,44 +279,36 @@ module RatatuiRuby
   # Frame object for imperative drawing.
   #
   # [tree] A widget tree (Widgets::Paragraph, Layout::Layout, etc.) to render. Optional if
-  #--
-  # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2025 Kerrick Long
-  # SPDX-License-Identifier: MIT-0
-  #++
   #        a block is given.
   #
-  #--
-  # SPDX-SnippetEnd
-  #++
   # === Examples
   #
   # Legacy declarative style (tree-based):
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   RatatuiRuby.draw(Widgets::Paragraph.new(text: "Hello"))
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   # New imperative style (block-based):
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   RatatuiRuby.draw do |frame|
   #     frame.render_widget(Widgets::Paragraph.new(text: "Hello"), frame.area)
   #   end
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   def self.draw(tree = nil, &block)
     if tree && block
       raise ArgumentError, "Cannot provide both a tree and a block to draw"
@@ -351,22 +343,14 @@ module RatatuiRuby
   # This method checks for an event. It returns the event if one is found. It returns RatatuiRuby::Event::None if the timeout expires.
   #
   # [timeout] Float seconds to wait (default: 0.016).
-  #--
-  # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
-  # SPDX-License-Identifier: MIT-0
-  #++
   #           Pass <tt>nil</tt> to block indefinitely (wait forever).
   #           Pass <tt>0.0</tt> for a non-blocking check.
   #
-  #--
-  # SPDX-SnippetEnd
-  #++
   # === Examples
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   # Standard loop (approx 60 FPS)
@@ -377,10 +361,10 @@ module RatatuiRuby
   #
   #   # Non-blocking check (returns immediately)
   #   event = RatatuiRuby.poll_event(timeout: 0.0)
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   def self.poll_event(timeout: 0.016)
     raise ArgumentError, "timeout must be non-negative" if timeout && timeout < 0
 
@@ -435,17 +419,17 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2025 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2025 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   cell = RatatuiRuby.get_cell_at(10, 5)
   #   expect(cell.symbol).to eq("X")
   #   expect(cell.fg).to eq(:red)
   #   expect(cell).to be_bold
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   def self.get_cell_at(x, y)
     raw = _get_cell_at(x, y)
     Buffer::Cell.new(
@@ -481,15 +465,15 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   size = RatatuiRuby.get_terminal_size
   #   puts "Terminal: #{size.width}x#{size.height}"
-  #
   #--
   # SPDX-SnippetEnd
   #++
+  #
   def self.get_terminal_size
     raw = _get_terminal_size
     Layout::Rect.new(

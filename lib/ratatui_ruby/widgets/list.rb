@@ -22,7 +22,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   # Basic List
@@ -158,7 +158,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   list = Widgets::List.new(items: %w[a b c])
@@ -166,10 +166,10 @@ module RatatuiRuby
       #
       #   list = Widgets::List.new(items: %w[a b c], selected_index: 1)
       #   list.selected?  # => true
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Returns: Boolean.
       def selected?
         !selected_index.nil?
@@ -181,15 +181,15 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   list = Widgets::List.new(items: [])
       #   list.empty?  # => true
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Returns: Boolean.
       def empty?
         items.empty?
@@ -201,15 +201,15 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   list = Widgets::List.new(items: %w[alpha beta gamma])
       #   list.len  # => 3
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Returns: Integer.
       def len
         items.length
@@ -232,15 +232,15 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   list = Widgets::List.new(items: %w[alpha beta gamma], selected_index: 1)
       #   list.selected_item  # => "beta"
-      #
       #--
       # SPDX-SnippetEnd
       #++
+      #
       # Returns: The item at the selected index, or nil if no selection.
       def selected_item
         return nil if selected_index.nil?

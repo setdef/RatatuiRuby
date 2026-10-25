@@ -23,7 +23,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   inject_key("s")           # Triggers async command
@@ -31,10 +31,10 @@ module RatatuiRuby
     #   inject_key(:q)            # Quit after seeing results
     #   Tea.run(...)
     #   assert_snapshots("after_s_with_results")
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # This is not "test mode"—it's a real event that runtimes handle.
     # Production apps could use it too (e.g., "ensure saves complete before quit").
     class Sync < Event

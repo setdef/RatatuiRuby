@@ -33,7 +33,7 @@ module RatatuiRuby
   #
   #--
   # SPDX-SnippetBegin
-  # SPDX-FileCopyrightText: 2026 Kerrick Long
+  # SPDX-SnippetCopyrightText: 2026 Kerrick Long
   # SPDX-License-Identifier: MIT-0
   #++
   #   # Simple ASCII text
@@ -67,7 +67,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2026 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   RatatuiRuby::Text.width("Hello")        # => 5 (5 ASCII chars × 1 cell)
@@ -80,10 +80,10 @@ module RatatuiRuby
     #   RatatuiRuby.run do |tui|
     #     width = tui.text_width("Hello 👍")
     #   end
-    #
     #--
     # SPDX-SnippetEnd
     #++
+    #
     # [string] String to measure (String or object convertible to String)
     # Returns: Integer (number of terminal cells the string occupies)
     # Raises: TypeError if the argument is not a String

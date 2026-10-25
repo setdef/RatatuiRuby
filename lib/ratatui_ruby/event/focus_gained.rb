@@ -21,7 +21,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   if event.focus_gained?
@@ -35,7 +35,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.focus_gained? # => true
@@ -51,7 +51,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   case event
@@ -77,7 +77,15 @@ module RatatuiRuby
 
       # Returns true. The terminal window is now in focus.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.focus? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def focus?
         true
       end
@@ -85,21 +93,45 @@ module RatatuiRuby
 
       # Returns true. The application gained focus.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.gained? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def gained?
         true
       end
 
       # Returns false. This is not a focus lost event.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.lost? # => false
+      #--
+      # SPDX-SnippetEnd
+      #++
       def lost?
         false
       end
 
       # Returns false. Blur is the opposite of focus gained.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.blur? # => false
+      #--
+      # SPDX-SnippetEnd
+      #++
       def blur?
         false
       end
@@ -107,7 +139,15 @@ module RatatuiRuby
 
       # Returns true. The application is active.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.active? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def active?
         true
       end
@@ -115,7 +155,15 @@ module RatatuiRuby
 
       # Returns false. The application is not inactive.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.inactive? # => false
+      #--
+      # SPDX-SnippetEnd
+      #++
       def inactive?
         false
       end

@@ -19,7 +19,7 @@ Here is a "Hello World" application that demonstrates the core lifecycle of a **
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 <!-- SYNC:START:examples/verify_quickstart_lifecycle/app.rb:main -->
@@ -88,7 +88,7 @@ You can simplify your code by using `RatatuiRuby.run`. This method handles the t
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 <!-- SYNC:START:examples/verify_quickstart_dsl/app.rb:main -->
@@ -142,7 +142,7 @@ Real-world applications often need to split the screen into multiple areas. `Rat
 
 <!-- SPDX-SnippetBegin -->
 <!--
-  SPDX-FileCopyrightText: 2026 Kerrick Long
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long
   SPDX-License-Identifier: MIT-0
 -->
 <!-- SYNC:START:examples/verify_quickstart_layout/app.rb:main -->

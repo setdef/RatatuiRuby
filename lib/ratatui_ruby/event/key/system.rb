@@ -14,14 +14,30 @@ module RatatuiRuby
         #
         # System keys include: Esc, CapsLock, ScrollLock, NumLock, PrintScreen, Pause, Menu, KeypadBegin.
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.system? # => true for pause, esc, caps_lock, etc.
+        #--
+        # SPDX-SnippetEnd
+        #++
         def system?
           @kind == :system
         end
 
         # Returns true if this is a function key (F1-F24).
         #
+        #--
+        # SPDX-SnippetBegin
+        # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+        # SPDX-License-Identifier: MIT-0
+        #++
         #   event.function? # => true for f1, f2, ..., f24
+        #--
+        # SPDX-SnippetEnd
+        #++
         def function?
           @kind == :function
         end

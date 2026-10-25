@@ -21,7 +21,15 @@ module RatatuiRuby
     #
     # Run the interactive demo from the terminal:
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   ruby examples/widget_ratatui_logo/app.rb
+    #--
+    # SPDX-SnippetEnd
+    #++
     class RatatuiLogo < Data.define
       include CoerceableWidget
 

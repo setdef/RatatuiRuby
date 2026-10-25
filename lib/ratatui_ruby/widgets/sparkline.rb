@@ -22,7 +22,15 @@ module RatatuiRuby
     #
     # Run the interactive demo from the terminal:
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   ruby examples/widget_sparkline/app.rb
+    #--
+    # SPDX-SnippetEnd
+    #++
     class Sparkline < Data.define(:data, :max, :style, :block, :direction, :absent_value_symbol, :absent_value_style, :bar_set)
       include CoerceableWidget
 
@@ -76,7 +84,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2026 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   bar_set: {
@@ -114,7 +122,15 @@ module RatatuiRuby
       # [absent_value_symbol] Character for absent (nil) values (optional).
       # [absent_value_style] Style for absent (nil) values (optional).
       # [bar_set] Symbol, Hash, or Array of custom characters (optional).
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   Symbols: <tt>:nine_levels</tt> (default gradient), <tt>:three_levels</tt> (simplified).
+      #--
+      # SPDX-SnippetEnd
+      #++
       def initialize(data:, max: nil, style: nil, block: nil, direction: :left_to_right, absent_value_symbol: nil, absent_value_style: nil, bar_set: nil)
         # Normalize bar_set to Hash[Symbol, String] if provided as Array or Hash
         bar_set = case bar_set

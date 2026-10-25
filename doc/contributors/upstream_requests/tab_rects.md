@@ -24,17 +24,28 @@ Neither approach is satisfactory.
 
 Consider a TUI with a tabbed interface:
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```
 ┌Announce v0.7.3───────────────────────────────emate┐
 │ Preview Email  ▸  Preview Commit  ▸  Announce   │
 │                                                   │
 └───────────────────────────────────────────────────┘
 ```
+<!-- SPDX-SnippetEnd -->
 
 The application wants to detect clicks on individual tab titles (`"Preview Email"`, `"Preview Commit"`, `"Announce"`) and switch to that tab.
 
 Without title rects, the application must manually compute where each tab renders:
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```rust
 // Manual calculation - fragile and duplicates internal logic
 let divider_width = 3; // " ▸ " is 3 characters
@@ -48,6 +59,7 @@ let tab_rects: Vec<Rect> = titles.iter().map(|title| {
     rect
 }).collect();
 ```
+<!-- SPDX-SnippetEnd -->
 
 This duplicates private logic from `Tabs::render_tabs` and breaks when:
 
@@ -60,6 +72,11 @@ This duplicates private logic from `Tabs::render_tabs` and breaks when:
 
 `Tabs` has a private `render_tabs` method that computes title areas:
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```rust
 // From src/widgets/tabs.rs - private rendering logic
 fn render_tabs(&self, tabs_area: Rect, buf: &mut Buffer) {
@@ -83,6 +100,7 @@ fn render_tabs(&self, tabs_area: Rect, buf: &mut Buffer) {
     }
 }
 ```
+<!-- SPDX-SnippetEnd -->
 
 The rect is computed for applying `highlight_style` but is not accessible to users.
 
@@ -90,6 +108,11 @@ The rect is computed for applying `highlight_style` but is not accessible to use
 
 Following the pattern established by `Block::inner(area)`, add a pure computation method that takes an area and returns computed sub-rects without rendering:
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```rust
 impl Tabs {
     /// Returns the bounding rect for each tab title given an area.
@@ -114,18 +137,30 @@ impl Tabs {
     pub fn title_rects(&self, area: Rect) -> Vec<Rect> { ... }
 }
 ```
+<!-- SPDX-SnippetEnd -->
 
 Alternatively, a single-lookup method:
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```rust
 /// Returns the rect for the tab at the given index.
 pub fn title_rect(&self, area: Rect, index: usize) -> Option<Rect> { ... }
 ```
+<!-- SPDX-SnippetEnd -->
 
 ## Workaround
 
 Without this API, users must replicate the tab layout algorithm. Here is the current approach used in RatatuiRuby:
 
+<!-- SPDX-SnippetBegin -->
+<!--
+  SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+  SPDX-License-Identifier: MIT-0
+-->
 ```rust
 // Manually compute tab title positions
 let divider_width = 3; // " ▸ " is 3 characters  
@@ -147,6 +182,7 @@ for (i, rect) in tab_rects.iter().enumerate() {
     }
 }
 ```
+<!-- SPDX-SnippetEnd -->
 
 This works for simple cases but breaks when:
 

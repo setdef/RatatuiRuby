@@ -22,7 +22,7 @@ module RatatuiRuby
     #
     #--
     # SPDX-SnippetBegin
-    # SPDX-FileCopyrightText: 2025 Kerrick Long
+    # SPDX-SnippetCopyrightText: 2025 Kerrick Long
     # SPDX-License-Identifier: MIT-0
     #++
     #   if event.focus_lost?
@@ -36,7 +36,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   event.focus_lost? # => true
@@ -52,7 +52,7 @@ module RatatuiRuby
       #
       #--
       # SPDX-SnippetBegin
-      # SPDX-FileCopyrightText: 2025 Kerrick Long
+      # SPDX-SnippetCopyrightText: 2025 Kerrick Long
       # SPDX-License-Identifier: MIT-0
       #++
       #   case event
@@ -78,7 +78,15 @@ module RatatuiRuby
 
       # Returns true. The terminal has lost focus (blur).
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.blur? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def blur?
         true
       end
@@ -86,7 +94,15 @@ module RatatuiRuby
 
       # Returns true. The application lost focus.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.lost? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def lost?
         true
       end
@@ -94,7 +110,15 @@ module RatatuiRuby
 
       # Returns false. This is not a focus gained event.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.focus? # => false
+      #--
+      # SPDX-SnippetEnd
+      #++
       def focus?
         false
       end
@@ -102,14 +126,30 @@ module RatatuiRuby
 
       # Returns false. This is not a gained event.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.gained? # => false
+      #--
+      # SPDX-SnippetEnd
+      #++
       def gained?
         false
       end
 
       # Returns true. The application is inactive.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.inactive? # => true
+      #--
+      # SPDX-SnippetEnd
+      #++
       def inactive?
         true
       end
@@ -117,7 +157,15 @@ module RatatuiRuby
 
       # Returns false. The application is not active.
       #
+      #--
+      # SPDX-SnippetBegin
+      # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+      # SPDX-License-Identifier: MIT-0
+      #++
       #   event.active? # => false
+      #--
+      # SPDX-SnippetEnd
+      #++
       def active?
         false
       end

@@ -22,7 +22,15 @@ module RatatuiRuby
     #
     # Run the interactive demo from the terminal:
     #
+    #--
+    # SPDX-SnippetBegin
+    # SPDX-SnippetCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+    # SPDX-License-Identifier: MIT-0
+    #++
     #   ruby examples/widget_calendar/app.rb
+    #--
+    # SPDX-SnippetEnd
+    #++
     class Calendar < Data.define(:year, :month, :events, :default_style, :header_style, :block, :show_weekdays_header, :show_surrounding, :show_month_header)
       include CoerceableWidget
 
