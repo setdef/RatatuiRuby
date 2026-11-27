@@ -166,6 +166,8 @@ Plus: flexible layouts with constraints, full keyboard/mouse/paste/resize events
 
 Bug reports and pull requests are welcome on [GitHub](https://github.com/setdef/RatatuiRuby). This project is intended to be a safe, productive collaboration, and contributors are expected to adhere to the [Code of Conduct](https://man.sr.ht/~kerrick/ratatui_ruby/code_of_conduct.md).
 
+Report a security problem privately, as [SECURITY.md](SECURITY.md) says, never on the forum or in a GitHub issue.
+
 Issues for the underlying Rust library should be filed at [ratatui/ratatui](https://github.com/ratatui/ratatui).
 
 Want to help develop **ratatui_ruby**? Check out the [contribution guide on the wiki](https://man.sr.ht/~kerrick/ratatui_ruby/contributing.md).
