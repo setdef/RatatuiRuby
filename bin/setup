@@ -16,6 +16,12 @@ mise x -- rustup component add rustfmt clippy
 mise x -- pip install 'reuse[charset-normalizer]'
 mise x -- gem install bundler:4.0.3
 
+# On Linux, bindgen loads the libclang of PyPI's libclang wheel, so that
+# compiling needs no system libclang (tasks/libclang.rake).
+if [ "$(uname -s)" = "Linux" ]; then
+  mise x -- uv pip install --quiet --target vendor/libclang 'libclang==18.1.1'
+fi
+
 # A gem in the per-user gem directory may have been built for another Ruby,
 # so install the bundle inside the repo instead.
 mise x -- bundle config set --local path vendor/bundle
