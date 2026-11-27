@@ -94,7 +94,11 @@ The [discussion forum](https://forum.setdef.com/tags/c/ratatui-ruby/6/discussion
 is the best place to ask questions, share patches, and get feedback. Report bugs
 on the [bug tracker](https://forum.setdef.com/tags/c/ratatui-ruby/6/bug). Follow
 [announcements](https://forum.setdef.com/tags/c/ratatui-ruby/6/announcement)
-for release notes. All participants follow the
+for release notes. GitHub Issues are open to the project's collaborators
+only, and pull requests are off. To send a patch, post it on the forum, or
+email it with `git send-email` to `replies+ratatui-ruby@forum.setdef.com`.
+[git-send-email.io](https://git-send-email.io) shows how to set that up. All
+participants follow the
 [Code of Conduct](https://man.sr.ht/~kerrick/ratatui_ruby/code_of_conduct.md).
 
 File issues for the underlying Rust library at

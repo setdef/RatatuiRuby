@@ -288,7 +288,7 @@ give Ruby developers TUI options.
   {Contributing Guide}[https://man.sr.ht/~kerrick/ratatui_ruby/contributing.md],
   {Code of Conduct}[https://man.sr.ht/~kerrick/ratatui_ruby/code_of_conduct.md],
   {Project History}[https://man.sr.ht/~kerrick/ratatui_ruby/history/index.md],
-  {Pull Requests}[https://forum.setdef.com/tags/c/ratatui-ruby/6/patch]
+  {Patches}[https://forum.setdef.com/tags/c/ratatui-ruby/6/patch]
 
 
 ---
